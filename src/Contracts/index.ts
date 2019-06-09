@@ -12,6 +12,7 @@
 */
 
 import { ParsedRule } from 'indicative-parser'
+import { normalizeEmail } from 'validator'
 
 /**
  * Allowed keys for date offset
@@ -31,7 +32,7 @@ export type RulesConfig = {
   existyStrict: boolean,
 }
 
-export interface RulesContract {
+export interface ValidationRulesContract {
   above ([minValue]: [number]): ParsedRule,
   accepted (): ParsedRule,
   alpha (): ParsedRule,
@@ -78,4 +79,17 @@ export interface RulesContract {
   dateFormat (args: string[]): ParsedRule,
   beforeOffsetOf ([diffUnit, key]: [number, DateOffsetKeys]): ParsedRule,
   afterOffsetOf ([diffUnit, key]: [number, DateOffsetKeys]): ParsedRule,
+}
+
+export interface SanitizationRulesContract {
+  escape (): ParsedRule,
+  lowerCase (args?: [string]): ParsedRule,
+  normalizeEmail (options?: [Parameters<typeof normalizeEmail>[1]]): ParsedRule,
+  plural (): ParsedRule,
+  singular (): ParsedRule,
+  slug (): ParsedRule,
+  stripLinks (): ParsedRule,
+  stripTags (args?: any[]): ParsedRule,
+  trim (): ParsedRule,
+  upperCase (args?: [string]): ParsedRule,
 }

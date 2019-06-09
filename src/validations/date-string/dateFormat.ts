@@ -11,9 +11,9 @@ import { ensureLength, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { dateFormat } from '../../raw/dateFormat'
-import { RulesConfig, RulesContract } from '../../Contracts'
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['dateFormat']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['dateFormat']>[0]
 
 const MISSING_VALUE = 'dateFormat:make sure to define atleast one date format'
 

@@ -11,10 +11,10 @@ import { ensureLength, cast, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { dateOffsetKeys } from '../../utils'
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 import { beforeOffsetOf } from '../../raw/beforeOffsetOf'
 
-type ComparisonArg = Parameters<RulesContract['beforeOffsetOf']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['beforeOffsetOf']>[0]
 
 const MISSING_VALUES = 'beforeOffsetOf:make sure to define offset unit and key'
 const INVALID_AFTER_KEY = 'beforeOffsetOf:2nd argument must be a valid calc key'

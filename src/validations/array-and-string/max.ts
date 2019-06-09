@@ -9,9 +9,9 @@
 
 import { ensureLength, cast, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['max']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['max']>[0]
 
 const MISSING_VALUE = 'max: make sure to define max length'
 const INVALID_TYPE = 'max: length must be defined as an integer'

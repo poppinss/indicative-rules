@@ -11,9 +11,9 @@ import { ensureLength, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { existy } from '../../raw'
-import { RulesConfig, RulesContract } from '../../Contracts'
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['different']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['different']>[0]
 
 const MISSING_VALUE = 'different:make sure to define target field for comparison'
 

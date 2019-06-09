@@ -9,9 +9,9 @@
 
 import { ensureLength, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
-import { RulesConfig, RulesContract } from '../../Contracts'
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['equals']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['equals']>[0]
 
 const MISSING_VALUE = 'equals:make sure to define the comparison string'
 

@@ -11,9 +11,9 @@ import { ensureLength, cast, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { above as isAbove } from '../../raw/above'
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['above']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['above']>[0]
 
 const MISSING_VALUE = 'above:make sure to define minValue'
 const INVALID_TYPE = 'above:min value must be defined as an integer'

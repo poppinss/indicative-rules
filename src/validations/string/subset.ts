@@ -12,9 +12,9 @@ import { ValidationDefination } from 'indicative-compiler'
 
 import { subset } from '../../raw/subset'
 import { isString } from '../../raw/isString'
-import { RulesConfig, RulesContract } from '../../Contracts'
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['subset']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['subset']>[0]
 
 const MISSING_VALUE = 'subset:make sure to define subset collection'
 

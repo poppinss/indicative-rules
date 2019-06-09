@@ -10,8 +10,8 @@
 import { skippable, ensureLength, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
-import { RulesConfig, RulesContract } from '../../Contracts'
-type ComparisonArg = Parameters<RulesContract['substring']>[0]
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
+type ComparisonArg = Parameters<ValidationRulesContract['substring']>[0]
 
 const MISSING_VALUE = 'includes:make sure to define substring to match'
 

@@ -12,9 +12,9 @@ import { ValidationDefination } from 'indicative-compiler'
 
 import { empty } from '../../raw/empty'
 import { existy } from '../../raw/existy'
-import { RulesContract } from '../../Contracts'
+import { ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['requiredIf']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['requiredIf']>[0]
 
 const MISSING_VALUE = 'requiredIf:make sure to define target field'
 

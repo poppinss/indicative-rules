@@ -11,9 +11,9 @@ import { ensureLength, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 import { empty } from '../../raw/empty'
 import { existy } from '../../raw/existy'
-import { RulesContract } from '../../Contracts'
+import { ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['requiredWithAny']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['requiredWithAny']>[0]
 
 const MISSING_VALUES = 'requiredWithAny:make sure to define one or more target fields'
 

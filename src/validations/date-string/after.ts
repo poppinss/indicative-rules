@@ -11,9 +11,9 @@ import { skippable, ensureLength, cast, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { after } from '../../raw/after'
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['after']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['after']>[0]
 
 const MISSING_VALUE = 'after:make sure to define the after date'
 const INVALID_TYPE = 'after:after date must be defined as string or date object'

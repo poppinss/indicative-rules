@@ -11,9 +11,9 @@ import { ensureLength, skippable, cast, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { between } from '../../raw/between'
-import { RulesConfig, RulesContract } from '../../Contracts'
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['range']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['range']>[0]
 
 const MISSING_VALUES = 'range:make sure to define min and max values'
 const INVALID_TYPE = 'range:min and max values must be defined as integers'

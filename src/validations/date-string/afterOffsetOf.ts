@@ -12,9 +12,9 @@ import { ValidationDefination } from 'indicative-compiler'
 
 import { dateOffsetKeys } from '../../utils'
 import { afterOffsetOf } from '../../raw/afterOffsetOf'
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['afterOffsetOf']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['afterOffsetOf']>[0]
 
 const MISSING_VALUES = 'afterOffsetOf:make sure to define offset unit and key'
 const INVALID_AFTER_KEY = 'afterOffsetOf:2nd argument must be a valid calc key'

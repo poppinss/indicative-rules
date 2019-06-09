@@ -11,9 +11,9 @@ import { cast, ensureLength, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { under } from '../../raw/under'
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['under']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['under']>[0]
 
 const MISSING_VALUE = 'under:make sure to define max value'
 const INVALID_TYPE = 'under:max value must be defined as an integer'

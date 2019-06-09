@@ -11,9 +11,9 @@ import { ensureLength, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { inArray } from '../../raw/inArray'
-import { RulesConfig, RulesContract } from '../../Contracts'
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['in']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['in']>[0]
 
 const MISSING_VALUE = 'in:make sure to define search collection'
 

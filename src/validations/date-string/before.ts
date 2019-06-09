@@ -11,9 +11,9 @@ import { ensureLength, cast, skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { before } from '../../raw/before'
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparsionArgs = Parameters<RulesContract['before']>[0]
+type ComparsionArgs = Parameters<ValidationRulesContract['before']>[0]
 
 const MISSING_VALUE = 'before:make sure to define the before date'
 const INVALID_TYPE = 'before:before date must be defined as string or date object'

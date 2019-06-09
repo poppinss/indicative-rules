@@ -11,9 +11,9 @@ import { ensureLength, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { empty } from '../../raw/empty'
-import { RulesContract } from '../../Contracts'
+import { ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['requiredWhen']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['requiredWhen']>[0]
 
 const MISSING_VALUES = 'requiredWhen:make sure to define target field and it\'s expected value'
 

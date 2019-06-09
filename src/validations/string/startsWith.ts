@@ -9,9 +9,9 @@
 
 import { skippable, ensureLength, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
-import { RulesConfig, RulesContract } from '../../Contracts'
+import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['startsWith']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['startsWith']>[0]
 
 const MISSING_VALUE = 'startsWith:make sure to define substring'
 

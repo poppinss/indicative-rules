@@ -10,9 +10,9 @@
 import { ValidationDefination } from 'indicative-compiler'
 import { skippable, cast, ensureLength, getValue } from 'indicative-utils'
 
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['min']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['min']>[0]
 
 const MISSING_VALUE = 'min: make sure to define min length'
 const INVALID_TYPE = 'min: length must be defined as an integer'

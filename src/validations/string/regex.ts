@@ -10,9 +10,9 @@
 import { skippable, ensureLength, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
-import { RulesContract, RulesConfig } from '../../Contracts'
+import { ValidationRulesContract, RulesConfig } from '../../Contracts'
 
-type ComparisonArg = Parameters<RulesContract['regex']>[0]
+type ComparisonArg = Parameters<ValidationRulesContract['regex']>[0]
 
 const MISSING_VALUE = 'regex:make sure to define regex pattern'
 
