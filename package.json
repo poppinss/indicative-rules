@@ -79,7 +79,7 @@
   "dependencies": {
     "indicative-compiler": "^1.0.0",
     "indicative-parser": "^1.0.0",
-    "indicative-utils": "^1.0.0",
+    "indicative-utils": "^1.0.1",
     "validator": "^11.0.0"
   }
 }
