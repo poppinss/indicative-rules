@@ -37,6 +37,8 @@
     "del-cli": "^2.0.0",
     "doctoc": "^1.4.0",
     "husky": "^2.4.0",
+    "indicative-compiler": "^1.0.1",
+    "indicative-parser": "^1.0.0",
     "japa": "^2.0.10",
     "mrm": "^1.2.2",
     "np": "^5.0.3",
@@ -77,8 +79,6 @@
     "anyBranch": false
   },
   "dependencies": {
-    "indicative-compiler": "^1.0.0",
-    "indicative-parser": "^1.0.0",
     "indicative-utils": "^1.0.1",
     "validator": "^11.0.0"
   }
