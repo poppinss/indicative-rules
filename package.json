@@ -1,6 +1,6 @@
 {
   "name": "indicative-rules",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Collection of validation rules for indicative",
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
