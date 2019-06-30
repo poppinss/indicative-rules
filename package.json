@@ -41,7 +41,7 @@
     "fs-extra": "^8.0.1",
     "husky": "^2.4.0",
     "indicative-compiler": "^1.0.1",
-    "indicative-parser": "^1.0.0",
+    "indicative-parser": "^7.0.0",
     "japa": "^2.0.10",
     "klaw": "^3.0.0",
     "mrm": "^1.2.2",
