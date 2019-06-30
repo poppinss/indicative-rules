@@ -84,7 +84,7 @@
   },
   "dependencies": {
     "@slynova/slug": "^1.1.2",
-    "indicative-utils": "^1.0.1",
+    "indicative-utils": "^7.0.0",
     "pluralize": "^8.0.0",
     "striptags": "^3.1.1",
     "validator": "^11.0.0"
