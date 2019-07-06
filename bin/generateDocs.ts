@@ -7,7 +7,8 @@ const docsFor = ['validations', 'sanitizations', 'raw']
 const srcPath = join(__dirname, '..', 'src')
 const docsDir = join(__dirname, '..', 'docs')
 
-const ignoreLines = ['* @module indicative-rules', '* @example']
+const moduleBlock = /\/\*{1,2}\s*\*\s@module .*\s*\*\//g
+const ignoreLines = ['* @example']
 
 function getMatter (permalink: string, category: string) {
   category = category.replace(/-/g, ' ')
@@ -49,26 +50,20 @@ async function readFiles (locations: string[]) {
 function extractComments (contents: string) {
   let context = 'idle'
   const lines: string[] = []
+  contents = contents.replace(moduleBlock, '')
+  const sourceLines = contents.split('\n')
 
-  contents.split('\n').forEach((line) => {
+  for (let line of sourceLines) {
     if (line.trim() === '/**') {
       context = 'in'
-      return
-    }
-
-    if (line.trim() === '*/') {
+    } else if (line.trim() === '*/' && context === 'in') {
       context = 'out'
-      return
-    }
-
-    if (ignoreLines.includes(line.trim())) {
-      return
-    }
-
-    if (context === 'in') {
+      break
+    } else if (ignoreLines.includes(line.trim())) {
+    } else if (context === 'in') {
       lines.push(line.replace(/\*/g, '').replace(/^\s\s/, ''))
     }
-  })
+  }
 
   return lines.join('\n')
 }

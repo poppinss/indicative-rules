@@ -26,7 +26,3 @@ const rules = {
   ]
 }
 ```
-    Ensure value is castable to number
-    Ensure that orignal input wasn't with decimals. Use `float` rule
-    to allow decimals
-    Mutate field value

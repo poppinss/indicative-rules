@@ -53,5 +53,3 @@ const rules = {
   ]
 }
 ```
-    We mutate the value to a boolean when it is castable
-    to a boolean.

@@ -23,6 +23,3 @@ const rules = {
   ]
 }
 ```
-  Cleaning up user arguments to make sure that they are
-  useable at runtime
-  Validating runtime data

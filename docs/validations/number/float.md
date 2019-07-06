@@ -25,5 +25,3 @@ const rules = {
   ]
 }
 ```
-    Ensure value is castable to number
-    Mutate field value

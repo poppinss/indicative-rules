@@ -17,8 +17,3 @@ if (is.dateFormat('2010-11-20', ['YYYY-MM-DD'])) {
 if (is.dateFormat('2010-11-20', ['YYYY-MM-DD', 'YYYY/MM/DD'])) {
 }
 ```
-    Date is invalid
-    When pattern and date doesn't have a timezone, then we ensure
-    that formatted date as same as user input
-    Otherwise formatted date must be same as `input - timezone` and
-    `input - timezone` isn't same as `input`.

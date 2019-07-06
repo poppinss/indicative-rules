@@ -25,9 +25,3 @@ const rules = {
   ]
 }
 ```
-    Cast type of comparison value when types are different. This is important
-    since the end-user has no way to cast type of confirmed field. For example:
-   
-    1. Add `number` rule to the `pincode` field, which will cast the pincode to `number`.
-    2. Also add `confirmed` rule to `pincode`, now you cannot cast it's value, so we
-       need to do type conversion here.

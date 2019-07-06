@@ -29,6 +29,3 @@ const rules = {
   ]
 }
 ```
-    Ensure value is castable to number
-    Whole numbers must be greater than zero
-    Mutate field value

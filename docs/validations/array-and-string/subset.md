@@ -33,5 +33,3 @@ const rules = {
 ```
  
 SUBJECTIVE: PLEASE RE-CHECK (MORE OF A ARRAY RULE)
-    Convert to array if value is a string
-    Mutate data field
