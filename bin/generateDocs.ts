@@ -10,6 +10,8 @@ const docsDir = join(__dirname, '..', 'docs')
 const ignoreLines = ['* @module indicative-rules', '* @example']
 
 function getMatter (permalink: string, category: string) {
+  category = category.replace(/-/g, ' ')
+
   return [
     '---',
     `permalink: ${permalink}`,
@@ -91,7 +93,7 @@ async function writeDocs (basePath: string, nodes: { location: string, comments:
 async function srcToDocs (dir: string) {
   const location = join(srcPath, dir)
   const srcFiles = await getFiles(location, (item) => {
-    return item.path.endsWith('.ts') && !item.path.endsWith('index.js')
+    return item.path.endsWith('.ts') && !item.path.endsWith('index.ts')
   })
 
   const filesContents = await readFiles(srcFiles)

@@ -1,7 +1,7 @@
 ---
 permalink: subset
 title: subset
-category: array-and-string
+category: array and string
 ---
 
 Ensures the value of a given field is a

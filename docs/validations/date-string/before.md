@@ -1,7 +1,7 @@
 ---
 permalink: before
 title: before
-category: date-string
+category: date string
 ---
 
 Ensures the value of the field is before the expected date.

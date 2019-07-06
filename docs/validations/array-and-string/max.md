@@ -1,7 +1,7 @@
 ---
 permalink: max
 title: max
-category: array-and-string
+category: array and string
 ---
 
 Ensure the length of an array or string is not over the defined

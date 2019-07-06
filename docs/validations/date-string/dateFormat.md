@@ -1,7 +1,7 @@
 ---
 permalink: dateFormat
 title: dateFormat
-category: date-string
+category: date string
 ---
 
 Ensures the date or date time is valid as the one of the defined formats.

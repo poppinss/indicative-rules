@@ -1,7 +1,7 @@
 ---
 permalink: beforeOffsetOf
 title: beforeOffsetOf
-category: date-string
+category: date string
 ---
 
 Ensures the date is before a given offset of a given

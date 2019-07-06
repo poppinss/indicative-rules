@@ -1,7 +1,7 @@
 ---
 permalink: min
 title: min
-category: array-and-string
+category: array and string
 ---
 
 Ensure the length of an array or string is greater than the defined
