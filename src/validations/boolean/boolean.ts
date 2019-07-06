@@ -48,7 +48,9 @@ import { RulesConfig } from '../../Contracts'
  *  [to label="boolean (true)"]
  * [/casts]
  *
- * ```js
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   remember_me: 'boolean'
  * }
@@ -56,7 +58,7 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   remember_me: [
- *     rules.boolean()
+ *     validations.boolean()
  *   ]
  * }
  * ```

@@ -1,12 +1,14 @@
 ---
 permalink: requiredWithAll
 title: requiredWithAll
-category: validations
+category: existence
 ---
 
 Ensures the field is required when all other fields have non-empty values.
  
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   tax_id: 'required_with_all:car,house'
 }
@@ -14,7 +16,7 @@ const rules = {
 // or
 const rules = {
   tax_id: [
-    rule.requiredWithAll(['car', 'house'])
+    validations.requiredWithAll(['car', 'house'])
   ]
 }
-----
+```

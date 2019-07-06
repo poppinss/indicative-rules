@@ -35,7 +35,9 @@ const INVALID_AFTER_UNIT = 'afterOffsetOf:1st argument must be a number'
  * - seconds
  * - milliseconds
  *
- * ```js
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   meetup: 'after_offset_of:4,months'
  * }
@@ -43,7 +45,7 @@ const INVALID_AFTER_UNIT = 'afterOffsetOf:1st argument must be a number'
  * // or
  * const rules = {
  *   meetup: [
- *     rules.afterOffsetOf([4, 'months'])
+ *     validations.afterOffsetOf([4, 'months'])
  *   ]
  * }
  * ```

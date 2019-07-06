@@ -20,7 +20,9 @@ const MISSING_VALUES = 'requiredWithAny:make sure to define one or more target f
 /**
  * Ensures the field is required when any of the other fields have non-empty values.
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   password: 'required_with_any:username,email'
  * }
@@ -28,10 +30,10 @@ const MISSING_VALUES = 'requiredWithAny:make sure to define one or more target f
  * // or
  * const rules = {
  *   password: [
- *     rules.requiredWithAny(['username', 'email'])
+ *     validations.requiredWithAny(['username', 'email'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

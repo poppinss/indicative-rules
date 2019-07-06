@@ -15,6 +15,8 @@ import { RulesConfig } from '../../Contracts'
  * Checks if field value under validation is a valid Javascript array.
  *
  * ```js
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   whiteListedUrls: 'array'
  * }
@@ -22,10 +24,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   whiteListedUrls: [
- *     rules.array()
+ *     validations.array()
  *   ]
  * }
- *
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

@@ -1,13 +1,14 @@
 ---
 permalink: substring
 title: substring
-category: validations
+category: string
 ---
 
 Ensures the value of field under validation contains a given substring.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   url: 'includes:adonisjs.com'
 }
@@ -15,7 +16,7 @@ const rules = {
 // or
 const rules = {
   url: [
-    rule('includes', ['adonisjs.com'])
+    validations.includes(['adonisjs.com'])
   ]
 }
-----
+```

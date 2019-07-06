@@ -20,8 +20,9 @@ const MISSING_VALUE = 'same:make sure to define target field for comparison'
 /**
  * Ensures the value of 2 fields are same.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   password_confirmation: 'same:password'
  * }
@@ -29,10 +30,10 @@ const MISSING_VALUE = 'same:make sure to define target field for comparison'
  * // or
  * const rules = {
  *   password_confirmation: [
- *     rule('same', ['password'])
+ *     validations.same(['password'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

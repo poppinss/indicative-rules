@@ -1,7 +1,7 @@
 ---
 permalink: boolean
 title: boolean
-category: validations
+category: boolean
 ---
 
 Ensures the value of a field is a valid boolean representation.
@@ -39,7 +39,9 @@ cast value to boolean.
  [to label="boolean (true)"]
 [/casts]
  
-```js
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   remember_me: 'boolean'
 }
@@ -47,7 +49,7 @@ const rules = {
 // or
 const rules = {
   remember_me: [
-    rules.boolean()
+    validations.boolean()
   ]
 }
 ```

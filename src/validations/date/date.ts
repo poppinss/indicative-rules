@@ -29,7 +29,9 @@ import { RulesConfig } from '../../Contracts'
  * - Mar 25 2015 (Long Date)
  * - 25 Mar 2015 (Long Date)
  *
- * ```js
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   login_at: 'date'
  * }
@@ -37,7 +39,7 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   login_at: [
- *     rules.date()
+ *     validations.date()
  *   ]
  * }
  * ```

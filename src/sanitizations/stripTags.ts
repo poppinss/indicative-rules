@@ -22,7 +22,9 @@ type StripTagsArg = Parameters<SanitizationRulesContract['stripTags']>[0]
  * Strips HTML tags from a string. If value is not a string, it will be returned
  * as it is.
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
  *   message: 'strip_tags'
  * }
@@ -30,7 +32,7 @@ type StripTagsArg = Parameters<SanitizationRulesContract['stripTags']>[0]
  * // or
  * const sanitizationRules = {
  *   message: [
- *     rule('strip_tags')
+ *     sanitizations.stripTags()
  *   ]
  * }
  * ```

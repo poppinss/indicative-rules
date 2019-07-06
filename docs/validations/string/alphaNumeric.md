@@ -1,14 +1,15 @@
 ---
 permalink: alphaNumeric
 title: alphaNumeric
-category: validations
+category: string
 ---
 
 Makes sure the field under validation is alpha numeric only.
 The regex used is `/^[a-z0-9]+$/i`.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   username: 'alpha_numeric'
 }
@@ -16,7 +17,7 @@ const rules = {
 // or
 const rules = {
   username: [
-    rule('alpha_numeric')
+    validations.alphaNumeric()
   ]
 }
-----
+```

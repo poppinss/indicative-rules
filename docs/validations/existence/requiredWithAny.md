@@ -1,12 +1,14 @@
 ---
 permalink: requiredWithAny
 title: requiredWithAny
-category: validations
+category: existence
 ---
 
 Ensures the field is required when any of the other fields have non-empty values.
  
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   password: 'required_with_any:username,email'
 }
@@ -14,7 +16,7 @@ const rules = {
 // or
 const rules = {
   password: [
-    rules.requiredWithAny(['username', 'email'])
+    validations.requiredWithAny(['username', 'email'])
   ]
 }
-----
+```

@@ -33,7 +33,9 @@ function castType (input: any, type: string): any {
  * `password_confirmation` must exist and should have the same value as the actual
  * field.
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   password: 'confirmed'
  * }
@@ -44,7 +46,7 @@ function castType (input: any, type: string): any {
  *     rules.confirmed()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

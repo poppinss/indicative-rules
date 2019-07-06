@@ -16,8 +16,9 @@ import { RulesConfig } from '../../Contracts'
 /**
  * Makes sure the field under validation is alpha only. The regex used is `/^[a-z]+$/i`.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   username: 'alpha'
  * }
@@ -25,10 +26,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   username: [
- *     rule('alpha')
+ *     validations.alpha()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

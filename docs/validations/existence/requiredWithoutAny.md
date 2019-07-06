@@ -1,12 +1,14 @@
 ---
 permalink: requiredWithoutAny
 title: requiredWithoutAny
-category: validations
+category: existence
 ---
 
 Ensures the field is required when all of the other fields has empty values.
  
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   email: 'required_without_any:username,account_id'
 }
@@ -14,7 +16,7 @@ const rules = {
 // or
 const rules = {
   email: [
-    rules.requiredWithoutAny(['username', 'account_id'])
+    validations.requiredWithoutAny(['username', 'account_id'])
   ]
 }
-----
+```

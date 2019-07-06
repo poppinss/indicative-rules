@@ -18,8 +18,9 @@ const MISSING_VALUE = 'includes:make sure to define substring to match'
 /**
  * Ensures the value of field under validation contains a given substring.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   url: 'includes:adonisjs.com'
  * }
@@ -27,10 +28,10 @@ const MISSING_VALUE = 'includes:make sure to define substring to match'
  * // or
  * const rules = {
  *   url: [
- *     rule('includes', ['adonisjs.com'])
+ *     validations.includes(['adonisjs.com'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

@@ -1,12 +1,14 @@
 ---
 permalink: array
 title: array
-category: validations
+category: array
 ---
 
 Checks if field value under validation is a valid Javascript array.
  
 ```js
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   whiteListedUrls: 'array'
 }
@@ -14,7 +16,7 @@ const rules = {
 // or
 const rules = {
   whiteListedUrls: [
-    rules.array()
+    validations.array()
   ]
 }
- 
+```

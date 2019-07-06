@@ -1,7 +1,7 @@
 ---
 permalink: after
 title: after
-category: validations
+category: date-string
 ---
 
 Ensures the value of the field is after the expected date.
@@ -9,7 +9,9 @@ This method uses [isAfter](https://date-fns.org/docs/isAfter) function of date-f
  
 Validation fails if value is not a string or Date object.
  
-```js
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   confCall: `after:${new Date()}`
 }
@@ -17,7 +19,7 @@ const rules = {
 // or
 const rules = {
   confCall: [
-    rules.after(new Date())
+    validations.after([new Date()])
   ]
 }
 ```

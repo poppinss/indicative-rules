@@ -21,7 +21,9 @@ const INVALID_TYPE = 'range:min and max values must be defined as integers'
 /**
  * Ensures the value of field under validation is under a given range.
  *
- * ```js
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   age: 'range:16,60'
  * }
@@ -29,7 +31,7 @@ const INVALID_TYPE = 'range:min and max values must be defined as integers'
  * // or
  * const rules = {
  *   age: [
- *     rules.range([16, 60])
+ *     validations.range([16, 60])
  *   ]
  * }
  * ```

@@ -38,19 +38,20 @@ import { RulesConfig } from '../../Contracts'
  *  [to label="string"]
  * [/casts]
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   bio: 'string'
  * }
  *
  * // or
  * const rules = {
- *   password_confirmation: [
- *     rule('bio', 'string')
+ *   bio: [
+ *     validations.string()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

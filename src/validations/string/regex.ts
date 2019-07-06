@@ -22,8 +22,9 @@ const MISSING_VALUE = 'regex:make sure to define regex pattern'
  *
  * NOTE: For complex `regex`, always use the `rule` method.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   age: [
  *     rule('regex', /[a-z]+/)
@@ -33,10 +34,10 @@ const MISSING_VALUE = 'regex:make sure to define regex pattern'
  * // or
  * const rules = {
  *   age: [
- *     rule('regex', new RegExp('[a-z]+'))
+ *     validations.regex([new RegExp('[a-z]+')])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

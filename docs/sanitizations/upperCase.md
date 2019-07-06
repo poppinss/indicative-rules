@@ -7,15 +7,17 @@ category: sanitizations
 Converts a value to upper case. This sanitization rule is locale aware.
 If value is not a string, then it will return as is.
  
-```js
+```ts
+import { sanitizations } from 'indicative/sanitizer'
+ 
 const sanitizationRules = {
-  hexCode: 'upperCase'
+  hexCode: 'upper_case'
 }
  
 // or
 const sanitizationRules = {
   hexCode: [
-    rule('upperCase')
+    sanitizations.upperCase()
   ]
 }
 ```
@@ -24,12 +26,12 @@ You may also specify a locale.
  
 ```js
 const sanitizationRules = {
-  label: 'upperCase:fr-CA'
+  label: 'upper_case:fr-CA'
 }
  
 // or
 const sanitizationRules = {
   label: [
-    rule('upperCase', 'fr-CA')
+    sanitizations.upperCase(['fr-CA'])
   ]
 }

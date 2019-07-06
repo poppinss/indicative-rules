@@ -22,10 +22,9 @@ const INVALID_TYPE = 'above:min value must be defined as an integer'
  * Makes sure the value provided by the end user is above the
  * expected value.
  *
- * Make sure to cast the user input value to `number` before using this
- * rule by using `number` rule.
+ * ```ts
+ * import { validations } from 'indicative/validator'
  *
- * ----
  * const rules = {
  *   age: 'number|above:20'
  * }
@@ -33,11 +32,11 @@ const INVALID_TYPE = 'above:min value must be defined as an integer'
  * // or
  * const rules = {
  *   age: [
- *     rules.number(),
- *     rules.above(20)
+ *     validations.number(),
+ *     validations.above([20])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

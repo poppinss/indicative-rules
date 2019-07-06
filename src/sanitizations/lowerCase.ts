@@ -21,30 +21,34 @@ type LocaleArg = Parameters<SanitizationRulesContract['lowerCase']>[0]
  * Converts a value to lower case. This sanitization rule is locale aware.
  * If value is not a string, then it will return as is.
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
- *   hexCode: 'lowerCase'
+ *   hexCode: 'lower_case'
  * }
  *
  * // or
  * const sanitizationRules = {
  *   hexCode: [
- *     rule('lowerCase')
+ *     sanitizations.lowerCase()
  *   ]
  * }
  * ```
  *
  * You may also specify a locale.
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
- *   label: 'lowerCase:fr-CA'
+ *   label: 'lower_case:fr-CA'
  * }
  *
  * // or
  * const sanitizationRules = {
  *   label: [
- *     rule('lowerCase', 'fr-CA')
+ *     sanitizations.lowerCase()
  *   ]
  * }
  * ```

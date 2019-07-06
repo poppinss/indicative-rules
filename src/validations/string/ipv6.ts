@@ -16,8 +16,9 @@ import { RulesConfig } from '../../Contracts'
 /**
  * Ensures the value is a valid ip address as per `ipv6` spec only.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   ip_address: 'ipv6'
  * }
@@ -25,10 +26,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   ip_address: [
- *     rule('ipv6')
+ *     validations.ipv6()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

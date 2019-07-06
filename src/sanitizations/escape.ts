@@ -20,7 +20,9 @@ import { getValue, patchValue } from 'indicative-utils'
  * This method will only remove `&`, `"`, `'`, `<` and `>` characters. For advance escaping
  * make use of a 3rd party library like [he](https://github.com/mathiasbynens/he).
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
  *   message: 'escape'
  * }
@@ -28,7 +30,7 @@ import { getValue, patchValue } from 'indicative-utils'
  * // or
  * const sanitizationRules = {
  *   message: [
- *     rule('escape')
+ *     sanitizations.escape()
  *   ]
  * }
  * ```

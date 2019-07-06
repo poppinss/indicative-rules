@@ -24,7 +24,9 @@ const INVALID_TYPE = 'after:after date must be defined as string or date object'
  *
  * Validation fails if value is not a string or Date object.
  *
- * ```js
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   confCall: `after:${new Date()}`
  * }
@@ -32,7 +34,7 @@ const INVALID_TYPE = 'after:after date must be defined as string or date object'
  * // or
  * const rules = {
  *   confCall: [
- *     rules.after(new Date())
+ *     validations.after([new Date()])
  *   ]
  * }
  * ```

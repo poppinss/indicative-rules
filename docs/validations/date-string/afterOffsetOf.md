@@ -1,7 +1,7 @@
 ---
 permalink: afterOffsetOf
 title: afterOffsetOf
-category: validations
+category: date-string
 ---
 
 Ensures the date is after a given offset of a given
@@ -18,7 +18,9 @@ the following
 - seconds
 - milliseconds
  
-```js
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   meetup: 'after_offset_of:4,months'
 }
@@ -26,7 +28,7 @@ const rules = {
 // or
 const rules = {
   meetup: [
-    rules.afterOffsetOf([4, 'months'])
+    validations.afterOffsetOf([4, 'months'])
   ]
 }
 ```

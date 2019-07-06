@@ -1,7 +1,7 @@
 ---
 permalink: date
 title: date
-category: validations
+category: date
 ---
 
 Ensures the field under validation is a valid date. The value can be a
@@ -21,7 +21,9 @@ Following is the list of formats that passes validations
 - Mar 25 2015 (Long Date)
 - 25 Mar 2015 (Long Date)
  
-```js
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   login_at: 'date'
 }
@@ -29,7 +31,7 @@ const rules = {
 // or
 const rules = {
   login_at: [
-    rules.date()
+    validations.date()
   ]
 }
 ```

@@ -1,7 +1,7 @@
 ---
 permalink: min
 title: min
-category: validations
+category: array-and-string
 ---
 
 Ensure the length of an array or string is greater than the defined
@@ -10,6 +10,8 @@ length.
 Validation fails if user input is a not a valid array or string.
  
 ```js
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   password: 'min:6'
 }
@@ -17,7 +19,7 @@ const rules = {
 // or
 const rules = {
   password: [
-    rules.min(6)
+    validations.min([6])
   ]
 }
 ```

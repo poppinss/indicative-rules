@@ -18,8 +18,9 @@ import { RulesConfig } from '../../Contracts'
  * Empty strings, `false`, `null`, `0` and undefined
  * values will be considered as not accepted.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   terms: 'accepted'
  * }
@@ -27,10 +28,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   terms: [
- *     rule('accepted')
+ *     validations.accepted()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

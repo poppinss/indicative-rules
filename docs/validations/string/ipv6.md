@@ -1,13 +1,14 @@
 ---
 permalink: ipv6
 title: ipv6
-category: validations
+category: string
 ---
 
 Ensures the value is a valid ip address as per `ipv6` spec only.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   ip_address: 'ipv6'
 }
@@ -15,7 +16,7 @@ const rules = {
 // or
 const rules = {
   ip_address: [
-    rule('ipv6')
+    validations.ipv6()
   ]
 }
-----
+```

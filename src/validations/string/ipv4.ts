@@ -16,8 +16,9 @@ import { RulesConfig } from '../../Contracts'
 /**
  * Ensures the value is a valid ip address as per `ipv4` spec only.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   ip_address: 'ipv4'
  * }
@@ -25,10 +26,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   ip_address: [
- *     rule('ipv4')
+ *     validations.ipv4()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

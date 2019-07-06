@@ -1,14 +1,15 @@
 ---
 permalink: notIn
 title: notIn
-category: validations
+category: primitives
 ---
 
 Makes sure that the value of field under validation is not
 from one of the defined values.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   username: 'not_in:root,admin,super'
 }
@@ -16,7 +17,7 @@ const rules = {
 // or
 const rules = {
   username: [
-    rule('not_in', ['root', 'admin', 'super'])
+    validations.notIn(['root', 'admin', 'super'])
   ]
 }
-----
+```

@@ -1,7 +1,7 @@
 ---
 permalink: confirmed
 title: confirmed
-category: validations
+category: primitives
 ---
 
 Ensures a field value as confirmed using a `_confirmation` convention. This is
@@ -11,7 +11,9 @@ For example: If the password field name is `password`, then another field called
 `password_confirmation` must exist and should have the same value as the actual
 field.
  
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   password: 'confirmed'
 }
@@ -22,7 +24,7 @@ const rules = {
     rules.confirmed()
   ]
 }
-----
+```
     Cast type of comparison value when types are different. This is important
     since the end-user has no way to cast type of confirmed field. For example:
    

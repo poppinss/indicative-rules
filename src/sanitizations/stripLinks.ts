@@ -19,7 +19,9 @@ const linksRegex = /<a\b[^>]*>(.*?)<\/a>/g
 /**
  * Strips `a` tags from a given string.
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
  *   message: 'strip_links'
  * }
@@ -27,7 +29,7 @@ const linksRegex = /<a\b[^>]*>(.*?)<\/a>/g
  * // or
  * const sanitizationRules = {
  *   message: [
- *     rule('strip_links')
+ *     sanitizations.stripLinks()
  *   ]
  * }
  * ```

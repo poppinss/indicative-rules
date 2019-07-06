@@ -1,7 +1,7 @@
 ---
 permalink: dateFormat
 title: dateFormat
-category: validations
+category: date-string
 ---
 
 Ensures the date or date time is valid as the one of the defined formats.
@@ -23,12 +23,12 @@ output, though the format is correct.
 5. Validation will also fail, when format expects a timezone but missing
    in original date.
  
-```js
-// always use the rules object
+```ts
+import { validations } from 'indicative/validator'
  
 const rules = {
   publish_at: [
-    rule.dateFormat('YYYY-MM-DD HH:mm:ss')
+    validations.dateFormat(['YYYY-MM-DD HH:mm:ss'])
   ]
 }
 ```

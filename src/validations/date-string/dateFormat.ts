@@ -37,12 +37,12 @@ const MISSING_VALUE = 'dateFormat:make sure to define atleast one date format'
  * 5. Validation will also fail, when format expects a timezone but missing
  *    in original date.
  *
- * ```js
- * // always use the rules object
+ * ```ts
+ * import { validations } from 'indicative/validator'
  *
  * const rules = {
  *   publish_at: [
- *     rule.dateFormat('YYYY-MM-DD HH:mm:ss')
+ *     validations.dateFormat(['YYYY-MM-DD HH:mm:ss'])
  *   ]
  * }
  * ```

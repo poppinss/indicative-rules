@@ -25,7 +25,9 @@ const INVALID_TYPE = 'under:max value must be defined as an integer'
  * Make sure to cast the user input value to `number` before using this
  * rule by using `number` rule.
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   age: 'under:60'
  * }
@@ -33,10 +35,10 @@ const INVALID_TYPE = 'under:max value must be defined as an integer'
  * // or
  * const rules = {
  *   age: [
- *     rules.under(60)
+ *     validations.under(60)
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

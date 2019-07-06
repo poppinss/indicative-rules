@@ -21,7 +21,9 @@ const MISSING_VALUE = 'equals:make sure to define the comparison string'
  *
  * Since HTTP request data is always a string, it is better not to perform type checks on it.
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   coupon: 'equals:5050'
  * }
@@ -29,10 +31,10 @@ const MISSING_VALUE = 'equals:make sure to define the comparison string'
  * // or
  * const rules = {
  *   coupon: [
- *     rules.equals(5050)
+ *     validations.equals(5050)
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

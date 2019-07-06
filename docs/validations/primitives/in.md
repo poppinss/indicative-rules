@@ -1,13 +1,14 @@
 ---
 permalink: in
 title: in
-category: validations
+category: primitives
 ---
 
 Ensures the value of a given field matches one of expected values.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   post_type: 'in:draft,published'
 }
@@ -15,7 +16,7 @@ const rules = {
 // or
 const rules = {
   post_type: [
-    rule('in', ['draft', 'published'])
+    validations.in(['draft', 'published'])
   ]
 }
-----
+```ts

@@ -18,8 +18,9 @@ import { RulesConfig } from '../../Contracts'
  *
  * NOTE: This validation never checks for the existence of the email address.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   email: 'email'
  * }
@@ -27,10 +28,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   email: [
- *     rule('email')
+ *     validations.email()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

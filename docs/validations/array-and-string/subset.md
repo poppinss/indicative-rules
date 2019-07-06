@@ -1,7 +1,7 @@
 ---
 permalink: subset
 title: subset
-category: validations
+category: array-and-string
 ---
 
 Ensures the value of a given field is a
@@ -17,8 +17,9 @@ subset of expected values.
  [to label="string values"]
 [/casts]
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   include: 'subset:foo,bar,baz'
 }
@@ -26,10 +27,10 @@ const rules = {
 // or
 const rules = {
   include: [
-    rule('subset', ['foo', 'bar', 'baz'])
+    validations.subset(['foo', 'bar', 'baz'])
   ]
 }
-----
+```
  
 SUBJECTIVE: PLEASE RE-CHECK (MORE OF A ARRAY RULE)
     Convert to array if value is a string

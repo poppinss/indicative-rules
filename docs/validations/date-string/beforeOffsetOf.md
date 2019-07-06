@@ -1,7 +1,7 @@
 ---
 permalink: beforeOffsetOf
 title: beforeOffsetOf
-category: validations
+category: date-string
 ---
 
 Ensures the date is before a given offset of a given
@@ -18,7 +18,9 @@ the following
 - seconds
 - milliseconds
  
-```js
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   meetup: 'before_offset_of:4,months'
 }
@@ -26,7 +28,7 @@ const rules = {
 // or
 const rules = {
   meetup: [
-    rules.beforeOffsetOf([4, 'months'])
+    validations.beforeOffsetOf([4, 'months'])
   ]
 }
 ```

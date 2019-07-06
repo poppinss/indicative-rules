@@ -6,7 +6,9 @@ category: sanitizations
 
 Strips `a` tags from a given string.
  
-```js
+```ts
+import { sanitizations } from 'indicative/sanitizer'
+ 
 const sanitizationRules = {
   message: 'strip_links'
 }
@@ -14,7 +16,7 @@ const sanitizationRules = {
 // or
 const sanitizationRules = {
   message: [
-    rule('strip_links')
+    sanitizations.stripLinks()
   ]
 }
 ```

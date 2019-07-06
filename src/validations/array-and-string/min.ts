@@ -24,6 +24,8 @@ const INVALID_TYPE = 'min: length must be defined as an integer'
  * Validation fails if user input is a not a valid array or string.
  *
  * ```js
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   password: 'min:6'
  * }
@@ -31,7 +33,7 @@ const INVALID_TYPE = 'min: length must be defined as an integer'
  * // or
  * const rules = {
  *   password: [
- *     rules.min(6)
+ *     validations.min([6])
  *   ]
  * }
  * ```

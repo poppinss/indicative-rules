@@ -1,7 +1,7 @@
 ---
 permalink: string
 title: string
-category: validations
+category: string
 ---
 
 Ensures the value is a string.
@@ -29,16 +29,17 @@ to a string value
  [to label="string"]
 [/casts]
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   bio: 'string'
 }
  
 // or
 const rules = {
-  password_confirmation: [
-    rule('bio', 'string')
+  bio: [
+    validations.string()
   ]
 }
-----
+```

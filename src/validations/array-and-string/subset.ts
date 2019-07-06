@@ -32,8 +32,9 @@ const MISSING_VALUE = 'subset:make sure to define subset collection'
  *  [to label="string values"]
  * [/casts]
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   include: 'subset:foo,bar,baz'
  * }
@@ -41,10 +42,10 @@ const MISSING_VALUE = 'subset:make sure to define subset collection'
  * // or
  * const rules = {
  *   include: [
- *     rule('subset', ['foo', 'bar', 'baz'])
+ *     validations.subset(['foo', 'bar', 'baz'])
  *   ]
  * }
- * ----
+ * ```
  *
  * SUBJECTIVE: PLEASE RE-CHECK (MORE OF A ARRAY RULE)
  */

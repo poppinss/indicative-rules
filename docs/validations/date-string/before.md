@@ -1,7 +1,7 @@
 ---
 permalink: before
 title: before
-category: validations
+category: date-string
 ---
 
 Ensures the value of the field is before the expected date.
@@ -9,15 +9,17 @@ This method uses [isBefore](https://date-fns.org/docs/isBefore) function of date
  
 Validation fails if value is not a string or Date object.
  
-```js
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
-  confCall: 'before:2018-11-20'
+  confCall: 'before:2019-11-20'
 }
  
 // or
 const rules = {
   confCall: [
-    rules.before(new Date().setDate(new Date().getMonth() + 12))
+    validations.before(['2019-11-20'])
   ]
 }
 ```

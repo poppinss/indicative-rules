@@ -21,8 +21,9 @@ const MISSING_VALUE = 'different:make sure to define target field for comparison
  * Ensures the value of the field under validation is always different from
  * the targeted field value.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   secondary_email: 'different:primary_email'
  * }
@@ -30,10 +31,10 @@ const MISSING_VALUE = 'different:make sure to define target field for comparison
  * // or
  * const rules = {
  *   secondary_email: [
- *     rule('different', 'primary_email')
+ *     validations.different(['primary_email'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

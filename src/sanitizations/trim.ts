@@ -17,7 +17,9 @@ import { getValue, patchValue } from 'indicative-utils'
 /**
  * Remove whitespace from both sides of a given string.
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
  *   username: 'trim'
  * }
@@ -25,7 +27,7 @@ import { getValue, patchValue } from 'indicative-utils'
  * // or
  * const sanitizationRules = {
  *   username: [
- *     rule('trim')
+ *     sanitizations.trim()
  *   ]
  * }
  * ```

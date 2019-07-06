@@ -20,8 +20,9 @@ import { RulesConfig } from '../../Contracts'
  *  [to label="integer"]
  * [/casts]
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   age: 'integer'
  * }
@@ -29,10 +30,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   age: [
- *     rules.integer()
+ *     validations.integer()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

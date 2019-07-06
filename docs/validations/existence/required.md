@@ -1,7 +1,7 @@
 ---
 permalink: required
 title: required
-category: validations
+category: existence
 ---
 
 Ensures the value of field under validation is not empty. All of the following
@@ -11,7 +11,9 @@ values will be considered empty.
 - Empty Array `[]`
 - Empty string, `null` or `undefined`
  
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   username: 'required'
 }
@@ -19,7 +21,7 @@ const rules = {
 // or
 const rules = {
   username: [
-    rules.required()
+    validations.required()
   ]
 }
-----
+```

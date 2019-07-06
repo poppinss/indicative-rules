@@ -1,6 +1,6 @@
 import * as klaw from 'klaw'
 import * as fs from 'fs-extra'
-import { join, basename } from 'path'
+import { join, basename, sep } from 'path'
 import { Stats } from 'fs'
 
 const docsFor = ['validations', 'sanitizations', 'raw']
@@ -95,12 +95,19 @@ async function srcToDocs (dir: string) {
   })
 
   const filesContents = await readFiles(srcFiles)
+
   const filesComments = srcFiles.map((location, index) => {
     const fnName = basename(location).replace(/\.ts$/, '')
-    const matter = getMatter(fnName, dir)
+    const pathsTree = location.split(sep)
+    pathsTree.pop()
+
+    const category = pathsTree.pop()!
+
+    const matter = getMatter(fnName, category)
     const doc = matter.concat(extractComments(filesContents[index]))
     return { comments: doc.join('\n'), location }
   })
+
   await writeDocs(docsDir, filesComments)
 }
 

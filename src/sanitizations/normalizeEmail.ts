@@ -26,20 +26,22 @@ type EmailArg = Parameters<SanitizationRulesContract['normalizeEmail']>[0]
  * If value is not a string, it will be returned as it is, otherwise it is passed to
  * [validator.js](https://github.com/chriso/validator.js) normalizeEmail method.
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
  *   email: [
- *     rule('normalize_email')
+ *     sanitizations.normalizeEmail()
  *   ]
  * }
  *
  * // pass options
  * const sanitizationRules = {
  *   email: [
- *     rule('normalize_email', {
+ *     sanitizations.normalizeEmail([{
  *       all_lowercase: true,
  *       icloud_remove_subaddress: true
- *     })
+ *     }])
  *   ]
  * }
  * ```

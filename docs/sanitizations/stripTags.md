@@ -7,7 +7,9 @@ category: sanitizations
 Strips HTML tags from a string. If value is not a string, it will be returned
 as it is.
  
-```js
+```ts
+import { sanitizations } from 'indicative/sanitizer'
+ 
 const sanitizationRules = {
   message: 'strip_tags'
 }
@@ -15,7 +17,7 @@ const sanitizationRules = {
 // or
 const sanitizationRules = {
   message: [
-    rule('strip_tags')
+    sanitizations.stripTags()
   ]
 }
 ```

@@ -1,12 +1,14 @@
 ---
 permalink: range
 title: range
-category: validations
+category: number
 ---
 
 Ensures the value of field under validation is under a given range.
  
-```js
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   age: 'range:16,60'
 }
@@ -14,7 +16,7 @@ const rules = {
 // or
 const rules = {
   age: [
-    rules.range([16, 60])
+    validations.range([16, 60])
   ]
 }
 ```

@@ -17,8 +17,9 @@ import { RulesConfig } from '../../Contracts'
  * Ensures the value of field under validation is safe to be parsed
  * using `JSON.parse` method.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   payload: 'json'
  * }
@@ -26,10 +27,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   payload: [
- *     rule('json')
+ *     validations.json()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

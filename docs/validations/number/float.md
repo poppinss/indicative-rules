@@ -1,7 +1,7 @@
 ---
 permalink: float
 title: float
-category: validations
+category: number
 ---
 
 Ensures the value is a valid float value.
@@ -11,8 +11,9 @@ Ensures the value is a valid float value.
  [to label="integer"]
 [/casts]
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   age: 'float'
 }
@@ -20,9 +21,9 @@ const rules = {
 // or
 const rules = {
   age: [
-    rules.float()
+    validations.float()
   ]
 }
-----
+```
     Ensure value is castable to number
     Mutate field value

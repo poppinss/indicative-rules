@@ -1,13 +1,14 @@
 ---
 permalink: same
 title: same
-category: validations
+category: primitives
 ---
 
 Ensures the value of 2 fields are same.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   password_confirmation: 'same:password'
 }
@@ -15,7 +16,7 @@ const rules = {
 // or
 const rules = {
   password_confirmation: [
-    rule('same', ['password'])
+    validations.same(['password'])
   ]
 }
-----
+```

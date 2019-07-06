@@ -1,13 +1,14 @@
 ---
 permalink: alpha
 title: alpha
-category: validations
+category: string
 ---
 
 Makes sure the field under validation is alpha only. The regex used is `/^[a-z]+$/i`.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   username: 'alpha'
 }
@@ -15,7 +16,7 @@ const rules = {
 // or
 const rules = {
   username: [
-    rule('alpha')
+    validations.alpha()
   ]
 }
-----
+```

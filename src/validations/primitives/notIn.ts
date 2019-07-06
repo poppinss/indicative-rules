@@ -21,8 +21,9 @@ const MISSING_VALUE = 'notIn:make sure to define search collection'
  * Makes sure that the value of field under validation is not
  * from one of the defined values.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   username: 'not_in:root,admin,super'
  * }
@@ -30,10 +31,10 @@ const MISSING_VALUE = 'notIn:make sure to define search collection'
  * // or
  * const rules = {
  *   username: [
- *     rule('not_in', ['root', 'admin', 'super'])
+ *     validations.notIn(['root', 'admin', 'super'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

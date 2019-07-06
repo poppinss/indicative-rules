@@ -17,8 +17,9 @@ import { alphaNumeric } from '../../raw/alphaNumeric'
  * Makes sure the field under validation is alpha numeric only.
  * The regex used is `/^[a-z0-9]+$/i`.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   username: 'alpha_numeric'
  * }
@@ -26,10 +27,10 @@ import { alphaNumeric } from '../../raw/alphaNumeric'
  * // or
  * const rules = {
  *   username: [
- *     rule('alpha_numeric')
+ *     validations.alphaNumeric()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

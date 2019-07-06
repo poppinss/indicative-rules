@@ -19,7 +19,9 @@ import * as pluralize from 'pluralize'
  * Converts a value to it's singular version. If value is not a string
  * then it will return as it is.
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
  *   modelName: 'singular'
  * }
@@ -27,7 +29,7 @@ import * as pluralize from 'pluralize'
  * // or
  * const sanitizationRules = {
  *   modelName: [
- *     rule('singular')
+ *     sanitizations.singular()
  *   ]
  * }
  * ```

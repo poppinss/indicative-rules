@@ -1,7 +1,7 @@
 ---
 permalink: max
 title: max
-category: validations
+category: array-and-string
 ---
 
 Ensure the length of an array or string is not over the defined
@@ -10,6 +10,8 @@ length.
 Validation fails if user input is a not a valid array or string.
  
 ```js
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   username: 'max:40'
 }
@@ -17,7 +19,7 @@ const rules = {
 // or
 const rules = {
   username: [
-    rules.max(40)
+    validations.max([40])
   ]
 }
 ```

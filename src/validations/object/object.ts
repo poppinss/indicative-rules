@@ -18,7 +18,10 @@ import { RulesConfig } from '../../Contracts'
  * object.
  *
  * The validation will fail for `Arrays`, though they are objects too in Javascript.
- * ----
+ *
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   user: 'object'
  * }
@@ -26,10 +29,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   user: [
- *     rule('object')
+ *     validations.object()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

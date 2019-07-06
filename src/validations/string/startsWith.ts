@@ -19,8 +19,9 @@ const MISSING_VALUE = 'startsWith:make sure to define substring'
  * Ensure the value of field under validation starts with a certain substr. This
  * validation will also trim whitespaces before making the check
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   phone_no: 'starts_with:99'
  * }
@@ -28,10 +29,10 @@ const MISSING_VALUE = 'startsWith:make sure to define substring'
  * // or
  * const rules = {
  *   phone_no: [
- *     rule('starts_with', '99')
+ *     validations.startsWith(['99'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

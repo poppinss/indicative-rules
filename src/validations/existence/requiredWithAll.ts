@@ -21,7 +21,9 @@ const MISSING_VALUES = 'requiredWithAll:make sure to define one or more target f
 /**
  * Ensures the field is required when all other fields have non-empty values.
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   tax_id: 'required_with_all:car,house'
  * }
@@ -29,10 +31,10 @@ const MISSING_VALUES = 'requiredWithAll:make sure to define one or more target f
  * // or
  * const rules = {
  *   tax_id: [
- *     rule.requiredWithAll(['car', 'house'])
+ *     validations.requiredWithAll(['car', 'house'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

@@ -1,7 +1,7 @@
 ---
 permalink: number
 title: number
-category: validations
+category: number
 ---
 
 Makes sure that the value of field under validation is a valid
@@ -15,7 +15,9 @@ or `float` rules for that.
  [to label="number"]
 [/casts]
  
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   game_points: 'number'
 }
@@ -23,10 +25,10 @@ const rules = {
 // or
 const rules = {
   game_points: [
-    rules.number()
+    validations.number()
   ]
 }
-----
+```
     Ensure value is castable to number
     Whole numbers must be greater than zero
     Mutate field value

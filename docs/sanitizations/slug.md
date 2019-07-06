@@ -19,7 +19,9 @@ will become
 i-am-greater-than-you
 ```
  
-```js
+```ts
+import { sanitizations } from 'indicative/sanitizer'
+ 
 const sanitizationRules = {
   slug: 'slug'
 }
@@ -27,7 +29,7 @@ const sanitizationRules = {
 // or
 const sanitizationRules = {
   slug: [
-    rule('slug')
+    sanitizations.slug()
   ]
 }
 ```

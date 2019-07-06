@@ -1,15 +1,16 @@
 ---
 permalink: accepted
 title: accepted
-category: validations
+category: string
 ---
 
 Ensures that the field under validation is accepted.
 Empty strings, `false`, `null`, `0` and undefined
 values will be considered as not accepted.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   terms: 'accepted'
 }
@@ -17,7 +18,7 @@ const rules = {
 // or
 const rules = {
   terms: [
-    rule('accepted')
+    validations.accepted()
   ]
 }
-----
+```

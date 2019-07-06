@@ -23,7 +23,9 @@ import { RulesConfig } from '../../Contracts'
  *  [to label="number"]
  * [/casts]
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   game_points: 'number'
  * }
@@ -31,10 +33,10 @@ import { RulesConfig } from '../../Contracts'
  * // or
  * const rules = {
  *   game_points: [
- *     rules.number()
+ *     validations.number()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

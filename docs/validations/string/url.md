@@ -1,13 +1,14 @@
 ---
 permalink: url
 title: url
-category: validations
+category: string
 ---
 
 Ensures the value is a valid URL format.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   gh_profile: 'url'
 }
@@ -15,7 +16,7 @@ const rules = {
 // or
 const rules = {
   gh_profile: [
-    rule('url')
+    validations.url()
   ]
 }
-----
+```

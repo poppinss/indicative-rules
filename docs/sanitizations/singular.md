@@ -7,7 +7,9 @@ category: sanitizations
 Converts a value to it's singular version. If value is not a string
 then it will return as it is.
  
-```js
+```ts
+import { sanitizations } from 'indicative/sanitizer'
+ 
 const sanitizationRules = {
   modelName: 'singular'
 }
@@ -15,7 +17,7 @@ const sanitizationRules = {
 // or
 const sanitizationRules = {
   modelName: [
-    rule('singular')
+    sanitizations.singular()
   ]
 }
 ```

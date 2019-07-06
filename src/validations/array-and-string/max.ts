@@ -23,6 +23,8 @@ const INVALID_TYPE = 'max: length must be defined as an integer'
  * Validation fails if user input is a not a valid array or string.
  *
  * ```js
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   username: 'max:40'
  * }
@@ -30,7 +32,7 @@ const INVALID_TYPE = 'max: length must be defined as an integer'
  * // or
  * const rules = {
  *   username: [
- *     rules.max(40)
+ *     validations.max([40])
  *   ]
  * }
  * ```

@@ -20,8 +20,9 @@ const MISSING_VALUE = 'notEquals:make sure to define comparison value'
  * Makes sure that the value of field under validation is not
  * same as the defined value.
  *
- * [source, js]
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   username: 'not_equals:root'
  * }
@@ -29,10 +30,10 @@ const MISSING_VALUE = 'notEquals:make sure to define comparison value'
  * // or
  * const rules = {
  *   username: [
- *     rule('not_equals', 'root')
+ *     validations.notEquals()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

@@ -19,7 +19,9 @@ import { empty } from '../../raw/empty'
  * - Empty Array `[]`
  * - Empty string, `null` or `undefined`
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   username: 'required'
  * }
@@ -27,10 +29,10 @@ import { empty } from '../../raw/empty'
  * // or
  * const rules = {
  *   username: [
- *     rules.required()
+ *     validations.required()
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

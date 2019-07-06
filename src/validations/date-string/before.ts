@@ -24,15 +24,17 @@ const INVALID_TYPE = 'before:before date must be defined as string or date objec
  *
  * Validation fails if value is not a string or Date object.
  *
- * ```js
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
- *   confCall: 'before:2018-11-20'
+ *   confCall: 'before:2019-11-20'
  * }
  *
  * // or
  * const rules = {
  *   confCall: [
- *     rules.before(new Date().setDate(new Date().getMonth() + 12))
+ *     validations.before(['2019-11-20'])
  *   ]
  * }
  * ```

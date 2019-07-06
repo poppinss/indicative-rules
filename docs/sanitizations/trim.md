@@ -6,7 +6,9 @@ category: sanitizations
 
 Remove whitespace from both sides of a given string.
  
-```js
+```ts
+import { sanitizations } from 'indicative/sanitizer'
+ 
 const sanitizationRules = {
   username: 'trim'
 }
@@ -14,7 +16,7 @@ const sanitizationRules = {
 // or
 const sanitizationRules = {
   username: [
-    rule('trim')
+    sanitizations.trim()
   ]
 }
 ```

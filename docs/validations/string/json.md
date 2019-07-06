@@ -1,14 +1,15 @@
 ---
 permalink: json
 title: json
-category: validations
+category: string
 ---
 
 Ensures the value of field under validation is safe to be parsed
 using `JSON.parse` method.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   payload: 'json'
 }
@@ -16,7 +17,7 @@ const rules = {
 // or
 const rules = {
   payload: [
-    rule('json')
+    validations.json()
   ]
 }
-----
+```

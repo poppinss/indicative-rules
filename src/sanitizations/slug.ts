@@ -31,7 +31,9 @@ import * as slugify from '@slynova/slug'
  * i-am-greater-than-you
  * ```
  *
- * ```js
+ * ```ts
+ * import { sanitizations } from 'indicative/sanitizer'
+ *
  * const sanitizationRules = {
  *   slug: 'slug'
  * }
@@ -39,7 +41,7 @@ import * as slugify from '@slynova/slug'
  * // or
  * const sanitizationRules = {
  *   slug: [
- *     rule('slug')
+ *     sanitizations.slug()
  *   ]
  * }
  * ```

@@ -21,7 +21,9 @@ const MISSING_VALUE = 'requiredIf:make sure to define target field'
 /**
  * The field is checked for required validation, when targeted field exists.
  *
- * ----
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
  * const rules = {
  *   address: 'required_if:needs_delivery'
  * }
@@ -29,10 +31,10 @@ const MISSING_VALUE = 'requiredIf:make sure to define target field'
  * // or
  * const rules = {
  *   address: [
- *     rules.requiredIf('needs_delivery')
+ *     validations.requiredIf(['needs_delivery'])
  *   ]
  * }
- * ----
+ * ```
  */
 const validation: ValidationDefination = {
   async: false,

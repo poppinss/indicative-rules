@@ -1,14 +1,15 @@
 ---
 permalink: different
 title: different
-category: validations
+category: primitives
 ---
 
 Ensures the value of the field under validation is always different from
 the targeted field value.
  
-[source, js]
-----
+```ts
+import { validations } from 'indicative/validator'
+ 
 const rules = {
   secondary_email: 'different:primary_email'
 }
@@ -16,7 +17,7 @@ const rules = {
 // or
 const rules = {
   secondary_email: [
-    rule('different', 'primary_email')
+    validations.different(['primary_email'])
   ]
 }
-----
+```
