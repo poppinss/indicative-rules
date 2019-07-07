@@ -10,7 +10,6 @@
 import { ensureLength, skippable, cast, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
-import { between } from '../../raw/between'
 import { RulesConfig, ValidationRulesContract } from '../../Contracts'
 
 type ComparisonArg = Parameters<ValidationRulesContract['range']>[0]
@@ -49,7 +48,7 @@ const validation: ValidationDefination = {
 
   validate: (data, field, [min, max]: ComparisonArg, config: RulesConfig) => {
     const fieldValue = getValue(data, field)
-    return skippable(fieldValue, field, config) || between(fieldValue, [min, max])
+    return skippable(fieldValue, field, config) || ((fieldValue >= min) && (fieldValue <= max))
   },
 }
 

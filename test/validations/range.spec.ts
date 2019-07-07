@@ -18,7 +18,6 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | range', () => {
-
   test('throw exception when max value is not defined', async (assert) => {
     const args = [18]
     const fn = () => validations.range.compile!(args)
@@ -73,6 +72,26 @@ test.group('Validations | range', () => {
 
   test('work fine when field value is under defined range', async (assert) => {
     const data = { age: 20 }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'age'
+
+    const args = [18, 60]
+    const result = validations.range.validate(root, field, args, config)
+    assert.isTrue(result)
+  })
+
+  test('work fine when field value is same as the minimum value', async (assert) => {
+    const data = { age: 18 }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'age'
+
+    const args = [18, 60]
+    const result = validations.range.validate(root, field, args, config)
+    assert.isTrue(result)
+  })
+
+  test('work fine when field value is same as the maximum value', async (assert) => {
+    const data = { age: 60 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
 
