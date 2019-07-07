@@ -57,4 +57,24 @@ test.group('Validations | equals', () => {
     const result = validations.equals.validate(root, field, args, config)
     assert.isTrue(result)
   })
+
+  test('work fine when doing negative boolean operations', async (assert) => {
+    const data = { accepted: false }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'accepted'
+    const args = [false]
+
+    const result = validations.equals.validate(root, field, args, config)
+    assert.isTrue(result)
+  })
+
+  test('work fine when doing numeric operation with 0', async (assert) => {
+    const data = { accepted: 0 }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'accepted'
+    const args = [0]
+
+    const result = validations.equals.validate(root, field, args, config)
+    assert.isTrue(result)
+  })
 })
