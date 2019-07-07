@@ -1,6 +1,12 @@
 {
   "name": "indicative-rules",
   "version": "1.0.0",
+  "main": "build/index.js",
+  "files": [
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ],
   "description": "Collection of validation rules for indicative",
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
@@ -61,12 +67,6 @@
       ".ts"
     ]
   },
-  "main": "build/index.js",
-  "files": [
-    "build/src",
-    "build/index.d.ts",
-    "build/index.js"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "doctoc README.md --title='## Table of contents' && git add README.md",
@@ -91,6 +91,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "tag": "alpha"
+    "tag": "latest"
   }
 }
