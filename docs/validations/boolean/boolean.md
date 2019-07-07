@@ -4,39 +4,16 @@ title: boolean
 category: boolean
 ---
 
-Ensures the value of a field is a valid boolean representation.
- 
-Validation fails, if value isn't a boolean and also unable to
-cast value to boolean.
+Enforces the field value to be a valid boolean representation. The rule will
+attempt to cast following values to their boolean counter part.
  
 [casts]
- [from label="string ('0')"]
- [to label="boolean (false)"]
-[/casts]
- 
-[casts]
- [from label="string ('1')"]
- [to label="boolean (true)"]
-[/casts]
- 
-[casts]
- [from label="string ('false')"]
- [to label="boolean (false)"]
-[/casts]
- 
-[casts]
- [from label="string ('true')"]
- [to label="boolean (true)"]
-[/casts]
- 
-[casts]
- [from label="number (0)"]
- [to label="boolean (false)"]
-[/casts]
- 
-[casts]
- [from label="number (1)"]
- [to label="boolean (true)"]
+  [label fromText="string ('0')", from="string", to="boolean", toText="boolean (false)"]
+  [label fromText="string ('1')", from="string", to="boolean", toText="boolean (true)"]
+  [label fromText="string ('false')", from="string", to="boolean", toText="boolean (false)"]
+  [label fromText="string ('true')", from="string", to="boolean", toText="boolean (true)"]
+  [label fromText="number ('0')", from="integer", to="boolean", toText="boolean (false)"]
+  [label fromText="number ('1')", from="integer", to="boolean", toText="boolean (true)"]
 [/casts]
  
 ```ts

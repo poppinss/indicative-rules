@@ -15,7 +15,7 @@ import { SanitizationDefination } from 'indicative-compiler'
 import { getValue, patchValue } from 'indicative-utils'
 
 /**
- * Remove whitespace from both sides of a given string.
+ * Removes whitespace from both sides of a given string.
  *
  * ```ts
  * import { sanitizations } from 'indicative/sanitizer'

@@ -4,8 +4,8 @@ title: json
 category: string
 ---
 
-Ensures the value of field under validation is safe to be parsed
-using `JSON.parse` method.
+Enforces the field value is a valid JSON string and can be safely
+parsed using `JSON.parse`.
  
 ```ts
 import { validations } from 'indicative/validator'

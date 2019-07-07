@@ -4,7 +4,7 @@ title: ipv4
 category: string
 ---
 
-Ensures the value is a valid ip address as per `ipv4` spec only.
+Enforces the field value is a valid `ipv4` address.
  
 ```ts
 import { validations } from 'indicative/validator'

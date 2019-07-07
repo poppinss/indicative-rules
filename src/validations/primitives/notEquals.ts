@@ -17,8 +17,7 @@ type ComparisonArg = Parameters<ValidationRulesContract['notEquals']>[0]
 const MISSING_VALUE = 'notEquals:make sure to define comparison value'
 
 /**
- * Makes sure that the value of field under validation is not
- * same as the defined value.
+ * Enforces the field value not to be equal to the given value.
  *
  * ```ts
  * import { validations } from 'indicative/validator'
@@ -30,7 +29,7 @@ const MISSING_VALUE = 'notEquals:make sure to define comparison value'
  * // or
  * const rules = {
  *   username: [
- *     validations.notEquals()
+ *     validations.notEquals(['root'])
  *   ]
  * }
  * ```

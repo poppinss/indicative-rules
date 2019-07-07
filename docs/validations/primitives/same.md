@@ -4,7 +4,8 @@ title: same
 category: primitives
 ---
 
-Ensures the value of 2 fields are same.
+Enforces the field value to be same as the targeted field
+value.
  
 ```ts
 import { validations } from 'indicative/validator'

@@ -1,10 +1,10 @@
 ---
-permalink: substring
-title: substring
+permalink: includes
+title: includes
 category: string
 ---
 
-Ensures the value of field under validation contains a given substring.
+Enforces the field value to include a given substring.
  
 ```ts
 import { validations } from 'indicative/validator'

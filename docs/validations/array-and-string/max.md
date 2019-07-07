@@ -4,12 +4,11 @@ title: max
 category: array and string
 ---
 
-Ensure the length of an array or string is not over the defined
-length.
+Enforces the value to have maximum length as per defined by the rule. The
+value type has to be a `string` or `array`, otherwise validation will
+fail.
  
-Validation fails if user input is a not a valid array or string.
- 
-```js
+```ts
 import { validations } from 'indicative/validator'
  
 const rules = {

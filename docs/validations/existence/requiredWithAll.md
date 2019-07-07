@@ -4,7 +4,7 @@ title: requiredWithAll
 category: existence
 ---
 
-Ensures the field is required when all other fields have non-empty values.
+Enforces the field value to exist when all of the expected fields exists.
  
 ```ts
 import { validations } from 'indicative/validator'

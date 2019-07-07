@@ -4,8 +4,7 @@ title: above
 category: number
 ---
 
-Makes sure the value provided by the end user is above the
-expected value.
+Enforces the field value to be above the defined value.
  
 ```ts
 import { validations } from 'indicative/validator'

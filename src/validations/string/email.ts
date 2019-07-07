@@ -14,9 +14,7 @@ import { email } from '../../raw/email'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Ensures the field under validation is a valid email format.
- *
- * NOTE: This validation never checks for the existence of the email address.
+ * Enforces the field under validation is a valid email format.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

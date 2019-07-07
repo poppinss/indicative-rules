@@ -18,8 +18,7 @@ type ComparisonArg = Parameters<ValidationRulesContract['notIn']>[0]
 const MISSING_VALUE = 'notIn:make sure to define search collection'
 
 /**
- * Makes sure that the value of field under validation is not
- * from one of the defined values.
+ * Enforces the field value not to be one of the allowed values.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

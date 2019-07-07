@@ -4,32 +4,24 @@ title: subset
 category: array and string
 ---
 
-Ensures the value of a given field is a
-subset of expected values.
+Enforces the value of a given field is a subset of expected values. The
+field value must be an `array` or a `string` of comma seperated values.
  
 [casts]
- [from label="string"]
- [to label="array"]
-[/casts]
- 
-[casts]
- [from label="array items"]
- [to label="string values"]
+  [label fromText="comma seperated string", from="string", to="array"]
 [/casts]
  
 ```ts
 import { validations } from 'indicative/validator'
  
 const rules = {
-  include: 'subset:foo,bar,baz'
+  sort_by: 'subset:email,id,name'
 }
  
 // or
 const rules = {
-  include: [
-    validations.subset(['foo', 'bar', 'baz'])
+  sort_by: [
+    validations.subset(['email', 'id', 'name'])
   ]
 }
 ```
- 
-SUBJECTIVE: PLEASE RE-CHECK (MORE OF A ARRAY RULE)

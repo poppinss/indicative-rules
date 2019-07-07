@@ -12,8 +12,8 @@ import { ValidationDefination } from 'indicative-compiler'
 import { empty } from '../../raw/empty'
 
 /**
- * Ensures the value of field under validation is not empty. All of the following
- * values will be considered empty.
+ * Enforces the field value to be not empty. All of the following
+ * values are considered empty.
  *
  * - An empty Object `{}`
  * - Empty Array `[]`

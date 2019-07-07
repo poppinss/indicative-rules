@@ -4,11 +4,11 @@ title: float
 category: number
 ---
 
-Ensures the value is a valid float value.
+Enforce the field value to be valid float value. This rule will
+cast the string representation of number to a float value.
  
 [casts]
- [from label="string"]
- [to label="integer"]
+  [label from="string", to="integer", toText="float"]
 [/casts]
  
 ```ts

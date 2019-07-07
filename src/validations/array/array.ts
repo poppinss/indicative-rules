@@ -12,9 +12,9 @@ import { ValidationDefination } from 'indicative-compiler'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Checks if field value under validation is a valid Javascript array.
+ * Enforces the field value to a valid Javascript array.
  *
- * ```js
+ * ```ts
  * import { validations } from 'indicative/validator'
  *
  * const rules = {

@@ -18,7 +18,8 @@ type ComparisonArg = Parameters<ValidationRulesContract['same']>[0]
 const MISSING_VALUE = 'same:make sure to define target field for comparison'
 
 /**
- * Ensures the value of 2 fields are same.
+ * Enforces the field value to be same as the targeted field
+ * value.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

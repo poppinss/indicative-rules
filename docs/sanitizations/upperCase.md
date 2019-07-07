@@ -4,8 +4,8 @@ title: upperCase
 category: sanitizations
 ---
 
-Converts a value to upper case. This sanitization rule is locale aware.
-If value is not a string, then it will return as is.
+Converts the field value to upper case. Also, this sanitization rule
+is locale aware.
  
 ```ts
 import { sanitizations } from 'indicative/sanitizer'

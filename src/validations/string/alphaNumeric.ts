@@ -14,8 +14,7 @@ import { RulesConfig } from '../../Contracts'
 import { alphaNumeric } from '../../raw/alphaNumeric'
 
 /**
- * Makes sure the field under validation is alpha numeric only.
- * The regex used is `/^[a-z0-9]+$/i`.
+ * Enforces the field value passes the alpha number regex `/^[a-z0-9]+$/i`.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

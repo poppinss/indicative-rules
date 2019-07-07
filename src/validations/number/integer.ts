@@ -12,12 +12,12 @@ import { ValidationDefination } from 'indicative-compiler'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Ensures the value is a valid integer. Validation will fail for values with
- * decimal points, you must use `float` for that.
+ * Enforces the field value to be a valid integer. Validation will
+ * fail for values with decimal points, you must use
+ * `float` for that.
  *
  * [casts]
- *  [from label="string"]
- *  [to label="integer"]
+ *   [label from="string", to="integer"]
  * [/casts]
  *
  * ```ts

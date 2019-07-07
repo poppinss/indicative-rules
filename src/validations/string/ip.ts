@@ -14,7 +14,7 @@ import { ip } from '../../raw/ip'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Ensures the value is a valid ip address as per `ipv4` and `ipv6` specs.
+ * Enforces the field value is a valid ip address.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

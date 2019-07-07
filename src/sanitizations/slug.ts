@@ -16,10 +16,10 @@ import { getValue, patchValue } from 'indicative-utils'
 import * as slugify from '@slynova/slug'
 
 /**
- * Converts a string to URL friendly slug. If value is not a string, it will be
+ * Converts a string to a URL friendly slug. If value is not a string, it will be
  * returned as it is.
  *
- * Also it will handle ascii charmaps and converts to their utf-8 counter parts.
+ * Also it will handle ascii charmaps and converts them to their utf-8 counter parts.
  *
  * ```text
  * I am > than you

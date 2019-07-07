@@ -16,8 +16,8 @@ type ComparisonArg = Parameters<ValidationRulesContract['startsWith']>[0]
 const MISSING_VALUE = 'startsWith:make sure to define substring'
 
 /**
- * Ensure the value of field under validation starts with a certain substr. This
- * validation will also trim whitespaces before making the check
+ * Enforces the value of field under validation starts with a certain `substring`.
+ * This validation will also trim whitespaces before making the check.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

@@ -19,7 +19,8 @@ type ComparisonArg = Parameters<ValidationRulesContract['requiredIf']>[0]
 const MISSING_VALUE = 'requiredIf:make sure to define target field'
 
 /**
- * The field is checked for required validation, when targeted field exists.
+ * Enforces the field value to exist when the target field exists. For example:
+ * Ask for `address` when value for `needs_delivery` exists.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

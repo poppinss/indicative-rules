@@ -12,15 +12,13 @@ import { ValidationDefination } from 'indicative-compiler'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Makes sure that the value of field under validation is a valid
- * whole number.
+ * Enforces the field value to be a valid whole number.
  *
  * Validation fails when number has a negative value. You must use `integer`
  * or `float` rules for that.
  *
  * [casts]
- *  [from label="string"]
- *  [to label="number"]
+ *   [label from="string", to="integer"]
  * [/casts]
  *
  * ```ts

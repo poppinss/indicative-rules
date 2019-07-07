@@ -4,18 +4,18 @@ title: in
 category: primitives
 ---
 
-Ensures the value of a given field matches one of expected values.
+Enforces the field value to be one of the allowed values.
  
 ```ts
 import { validations } from 'indicative/validator'
  
 const rules = {
-  post_type: 'in:draft,published'
+  post_status: 'in:draft,published'
 }
  
 // or
 const rules = {
-  post_type: [
+  post_status: [
     validations.in(['draft', 'published'])
   ]
 }

@@ -19,21 +19,20 @@ const MISSING_VALUE = 'before:make sure to define the before date'
 const INVALID_TYPE = 'before:before date must be defined as string or date object'
 
 /**
- * Ensures the value of the field is before the expected date.
+ * Enforces the field value to be before the expected date.
  * This method uses [isBefore](https://date-fns.org/docs/isBefore) function of date-fns.
- *
- * Validation fails if value is not a string or Date object.
  *
  * ```ts
  * import { validations } from 'indicative/validator'
  *
  * const rules = {
- *   confCall: 'before:2019-11-20'
+ *   confCall: 'date|before:2019-11-20'
  * }
  *
  * // or
  * const rules = {
  *   confCall: [
+ *     validations.date(),
  *     validations.before(['2019-11-20'])
  *   ]
  * }

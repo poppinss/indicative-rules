@@ -14,8 +14,7 @@ import { isObject } from '../../raw/isObject'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Ensures the value of field under validation is a valid Javascript
- * object.
+ * Enforces the field value to be a valid Javascript object.
  *
  * The validation will fail for `Arrays`, though they are objects too in Javascript.
  *

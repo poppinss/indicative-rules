@@ -19,22 +19,19 @@ const MISSING_VALUE = 'under:make sure to define max value'
 const INVALID_TYPE = 'under:max value must be defined as an integer'
 
 /**
- * Ensures the value provided by the end user is above the
- * expected value.
- *
- * Make sure to cast the user input value to `number` before using this
- * rule by using `number` rule.
+ * Enforces the field value to be under the defined value.
  *
  * ```ts
  * import { validations } from 'indicative/validator'
  *
  * const rules = {
- *   age: 'under:60'
+ *   age: 'integer|under:60'
  * }
  *
  * // or
  * const rules = {
  *   age: [
+ *     validations.integer(),
  *     validations.under(60)
  *   ]
  * }

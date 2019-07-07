@@ -4,9 +4,9 @@ title: afterOffsetOf
 category: date string
 ---
 
-Ensures the date is after a given offset of a given
-time period. The `period` value has to be one of
-the following
+Enforces the field value to be after a given time period offset.
+ 
+The `period` value has to be one of the following
  
 - years
 - quarters
@@ -22,12 +22,13 @@ the following
 import { validations } from 'indicative/validator'
  
 const rules = {
-  meetup: 'after_offset_of:4,months'
+  meetup: 'date|after_offset_of:4,months'
 }
  
 // or
 const rules = {
   meetup: [
+    validations.date(),
     validations.afterOffsetOf([4, 'months'])
   ]
 }

@@ -4,8 +4,8 @@ title: lowerCase
 category: sanitizations
 ---
 
-Converts a value to lower case. This sanitization rule is locale aware.
-If value is not a string, then it will return as is.
+Converts the field value to lower case. Also, this sanitization rule
+is locale aware.
  
 ```ts
 import { sanitizations } from 'indicative/sanitizer'
@@ -34,7 +34,7 @@ const sanitizationRules = {
 // or
 const sanitizationRules = {
   label: [
-    sanitizations.lowerCase()
+    sanitizations.lowerCase(['fr-CA'])
   ]
 }
 ```

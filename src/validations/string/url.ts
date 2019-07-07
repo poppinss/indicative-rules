@@ -14,7 +14,7 @@ import { url } from '../../raw/url'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Ensures the value is a valid URL format.
+ * Enforces the value to be a valid URL.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

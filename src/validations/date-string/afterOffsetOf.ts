@@ -21,9 +21,9 @@ const INVALID_AFTER_KEY = 'afterOffsetOf:2nd argument must be a valid calc key'
 const INVALID_AFTER_UNIT = 'afterOffsetOf:1st argument must be a number'
 
 /**
- * Ensures the date is after a given offset of a given
- * time period. The `period` value has to be one of
- * the following
+ * Enforces the field value to be after a given time period offset.
+ *
+ * The `period` value has to be one of the following
  *
  * - years
  * - quarters
@@ -39,12 +39,13 @@ const INVALID_AFTER_UNIT = 'afterOffsetOf:1st argument must be a number'
  * import { validations } from 'indicative/validator'
  *
  * const rules = {
- *   meetup: 'after_offset_of:4,months'
+ *   meetup: 'date|after_offset_of:4,months'
  * }
  *
  * // or
  * const rules = {
  *   meetup: [
+ *     validations.date(),
  *     validations.afterOffsetOf([4, 'months'])
  *   ]
  * }

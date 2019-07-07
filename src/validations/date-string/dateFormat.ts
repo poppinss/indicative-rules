@@ -18,14 +18,14 @@ type ComparisonArg = Parameters<ValidationRulesContract['dateFormat']>[0]
 const MISSING_VALUE = 'dateFormat:make sure to define atleast one date format'
 
 /**
- * Ensures the date or date time is valid as the one of the defined formats.
+ * Ensures the date or date time is valid as the per the defined formats.
  *
- * This method will import link:https://date-fns.org/v1.29.0/docs/format[format] method from dateFns.
+ * This method will import [format](https://date-fns.org/v1.29.0/docs/format) method from dateFns.
  *
  * ### Note
  * Following steps are performed to strip the timezone from the actual date
- * and then format the date. Keeping timezones on will result in different
- * output, though the format is correct.
+ * and then format the date. Keeping timezones will result in different
+ * output, even when the format is correct.
  *
  * 1. Timezone is only stripped when the date format expects timezone to
  *    be present.

@@ -12,14 +12,11 @@ import { ValidationDefination } from 'indicative-compiler'
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Ensures the field under validation is a valid date. The value can be a
- * date object or a valid date string.
- *
- * Returns false when value is not a string or date.
+ * Enforces the field value to be a valid date. The rule will
+ * cast the `string` values to a Javascript date object.
  *
  * [casts]
- *  [from label="string"]
- *  [to label="date"]
+ *   [label from="string", to="date"]
  * [/casts]
  *
  * Following is the list of formats that passes validations

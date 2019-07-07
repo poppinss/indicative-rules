@@ -4,7 +4,7 @@ title: alpha
 category: string
 ---
 
-Makes sure the field under validation is alpha only. The regex used is `/^[a-z]+$/i`.
+Enforces the field value passes the alpha regex `/^[a-z]+$/i`.
  
 ```ts
 import { validations } from 'indicative/validator'

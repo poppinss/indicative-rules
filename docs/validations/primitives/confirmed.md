@@ -4,12 +4,11 @@ title: confirmed
 category: primitives
 ---
 
-Ensures a field value as confirmed using a `_confirmation` convention. This is
-mainly used for password confirmation field.
+Checks whether the field has been confirmed with same value or not using
+the `_confirmation` convention. For example:
  
-For example: If the password field name is `password`, then another field called
-`password_confirmation` must exist and should have the same value as the actual
-field.
+The `password_confirmation` must exist and have the same value as the
+`password` field.
  
 ```ts
 import { validations } from 'indicative/validator'
@@ -21,7 +20,7 @@ const rules = {
 // or
 const rules = {
   password: [
-    rules.confirmed()
+    validations.confirmed()
   ]
 }
 ```

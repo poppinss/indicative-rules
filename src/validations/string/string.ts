@@ -7,36 +7,25 @@
 * file that was distributed with this source code.
 */
 
-import { skippable, patchValue, cast, getValue } from 'indicative-utils'
+import { skippable, getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
 
 import { RulesConfig } from '../../Contracts'
 
 /**
- * Ensures the value is a string.
+ * Enforces the field value to be a valid string.
  *
- * Validation fails when value isn't a string or cannot be casted
- * to a string value
+ * [note]
+ *   The values transfered over HTTP are alawys string, which means this
+ *   validation will always pass.
  *
- * [casts]
- *  [from label="number"]
- *  [to label="string"]
- * [/casts]
+ *   However, this validation rule is helpful for raw JSON requests, since
+ *   after parsing the JSON strings, the server will get the actual content
+ *   types and not a string.
  *
- * [casts]
- *  [from label="boolean"]
- *  [to label="string"]
- * [/casts]
- *
- * [casts]
- *  [from label="array"]
- *  [to label="string"]
- * [/casts]
- *
- * [casts]
- *  [from label="date"]
- *  [to label="string"]
- * [/casts]
+ *   In short, the rule has no impact for `application/x-www-form-urlencoded`, but
+ *   helpful for `application/json` content type.
+ * [/note]
  *
  * ```ts
  * import { validations } from 'indicative/validator'
@@ -62,13 +51,7 @@ const validation: ValidationDefination = {
       return true
     }
 
-    const castedValue = cast(fieldValue, 'string')
-    if (castedValue === null) {
-      return false
-    }
-
-    patchValue(data, field, castedValue)
-    return true
+    return typeof (fieldValue) === 'string'
   },
 }
 

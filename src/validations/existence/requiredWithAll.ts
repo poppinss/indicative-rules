@@ -19,7 +19,7 @@ type ComparisonArg = Parameters<ValidationRulesContract['requiredWithAll']>[0]
 const MISSING_VALUES = 'requiredWithAll:make sure to define one or more target fields'
 
 /**
- * Ensures the field is required when all other fields have non-empty values.
+ * Enforces the field value to exist when all of the expected fields exists.
  *
  * ```ts
  * import { validations } from 'indicative/validator'

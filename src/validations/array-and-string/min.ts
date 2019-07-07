@@ -18,12 +18,11 @@ const MISSING_VALUE = 'min: make sure to define min length'
 const INVALID_TYPE = 'min: length must be defined as an integer'
 
 /**
- * Ensure the length of an array or string is greater than the defined
- * length.
+ * Enforces the value to have minimum length as per defined by the rule. The
+ * value type has to be a `string` or `array`, otherwise validation will
+ * fail.
  *
- * Validation fails if user input is a not a valid array or string.
- *
- * ```js
+ * ```ts
  * import { validations } from 'indicative/validator'
  *
  * const rules = {

@@ -4,8 +4,8 @@ title: different
 category: primitives
 ---
 
-Ensures the value of the field under validation is always different from
-the targeted field value.
+Enforces the field value to be different from the targeted field
+value.
  
 ```ts
 import { validations } from 'indicative/validator'

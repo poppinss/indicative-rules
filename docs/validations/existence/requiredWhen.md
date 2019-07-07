@@ -4,20 +4,20 @@ title: requiredWhen
 category: existence
 ---
 
-The field is checked for required validation, when target field value is same
-as the target value.
+Enforces the field value to exist when the target field value matches the given
+value. For example: Ask for `address` when value for `checkout_type=deliver`.
  
 ```ts
 import { validations } from 'indicative/validator'
  
 const rules = {
-  state: 'required_when:country,US'
+  address: 'required_when:checkout_type,deliver'
 }
  
 // or
 const rules = {
   state: [
-    validations.requiredWhen(['country', 'US'])
+    validations.requiredWhen(['checkout_type', 'deliver'])
   ]
 }
 ```
