@@ -45,7 +45,7 @@ export interface ValidationRulesContract {
   endsWith ([substring]: [string]): ParsedRule,
   equals ([comparisonValue]: [any]): ParsedRule,
   in (args: any[]): ParsedRule,
-  substring ([substring]: [string]): ParsedRule,
+  includes ([substring]: [string]): ParsedRule,
   integer (): ParsedRule,
   float (): ParsedRule,
   ip (): ParsedRule,
