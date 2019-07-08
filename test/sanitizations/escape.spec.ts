@@ -30,4 +30,13 @@ test.group('Sanitizations | escape', () => {
     sanitizations.escape.sanitize(root, field, [], {})
     assert.deepEqual(data, { bio: 22 })
   })
+
+  test('escape string with greater than sign', (assert) => {
+    const data = { bio: 's>?bi' }
+    const root = { tip: data, original: data }
+    const field = 'bio'
+
+    sanitizations.escape.sanitize(root, field, [], {})
+    assert.deepEqual(data, { bio: 's&gt;?bi' })
+  })
 })
