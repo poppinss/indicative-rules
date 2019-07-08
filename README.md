@@ -5,8 +5,8 @@
 [![npm-image]][npm-url]
 ![](https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript)
 
-The repo contains a huge collection of rules to validate and sanitize data using Indicative. We recommend
-you to read the official documentation.
+The repo contains a collection of rules to `validate` and `sanitize` data using Indicative. We recommend
+you to read the [official documentation](https://indicative.adonisjs.com/validations/master).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
