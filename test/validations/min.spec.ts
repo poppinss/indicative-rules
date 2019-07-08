@@ -104,4 +104,24 @@ test.group('Validations | min', () => {
     const result = validations.min.validate(root, field, args, config)
     assert.isTrue(result)
   })
+
+  test('ignore null value is non strict mode', async (assert) => {
+    const data = { users: null }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'users'
+
+    const args = [2]
+    const result = validations.min.validate(root, field, args, { existyStrict: false })
+    assert.isTrue(result)
+  })
+
+  test('return false for null value in strict mode', async (assert) => {
+    const data = { users: null }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'users'
+
+    const args = [2]
+    const result = validations.min.validate(root, field, args, config)
+    assert.isFalse(result)
+  })
 })
