@@ -2,6 +2,7 @@
 permalink: sorted
 title: sorted
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/sorted.ts
 ---
 
 Returns a boolean telling if an array is sorted in ascending

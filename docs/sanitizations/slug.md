@@ -2,6 +2,7 @@
 permalink: slug
 title: slug
 category: sanitizations
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/sanitizations/slug.ts
 ---
 
 Converts a string to a URL friendly slug. If value is not a string, it will be

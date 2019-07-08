@@ -2,6 +2,7 @@
 permalink: confirmed
 title: confirmed
 category: primitives
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/primitives/confirmed.ts
 ---
 
 Checks whether the field has been confirmed with same value or not using

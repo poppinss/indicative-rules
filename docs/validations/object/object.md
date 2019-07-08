@@ -2,6 +2,7 @@
 permalink: object
 title: object
 category: object
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/object/object.ts
 ---
 
 Enforces the field value to be a valid Javascript object.

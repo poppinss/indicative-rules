@@ -2,6 +2,7 @@
 permalink: phone
 title: phone
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/phone.ts
 ---
 
 Validates an input string against the phone number regex. Checkout

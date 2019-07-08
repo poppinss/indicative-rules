@@ -2,6 +2,7 @@
 permalink: different
 title: different
 category: primitives
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/primitives/different.ts
 ---
 
 Enforces the field value to be different from the targeted field

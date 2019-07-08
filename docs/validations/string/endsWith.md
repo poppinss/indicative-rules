@@ -2,6 +2,7 @@
 permalink: endsWith
 title: endsWith
 category: string
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/string/endsWith.ts
 ---
 
 Enforces the value of field under validation ends with a certain `substring`.

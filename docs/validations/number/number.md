@@ -2,6 +2,7 @@
 permalink: number
 title: number
 category: number
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/number/number.ts
 ---
 
 Enforces the field value to be a valid whole number.

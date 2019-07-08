@@ -2,6 +2,7 @@
 permalink: empty
 title: empty
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/empty.ts
 ---
 
 Tells whether input is empty or not

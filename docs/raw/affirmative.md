@@ -2,6 +2,7 @@
 permalink: affirmative
 title: affirmative
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/affirmative.ts
 ---
 
  Returns true if the `input` is one of the affirmative keywords.

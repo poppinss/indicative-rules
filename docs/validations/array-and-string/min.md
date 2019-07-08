@@ -2,6 +2,7 @@
 permalink: min
 title: min
 category: array and string
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/array-and-string/min.ts
 ---
 
 Enforces the value to have minimum length as per defined by the rule. The

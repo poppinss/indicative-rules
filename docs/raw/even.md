@@ -2,6 +2,7 @@
 permalink: even
 title: even
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/even.ts
 ---
 
 Returns a boolean telling if value is even or not

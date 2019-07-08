@@ -2,6 +2,7 @@
 permalink: integer
 title: integer
 category: number
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/number/integer.ts
 ---
 
 Enforces the field value to be a valid integer. Validation will

@@ -2,6 +2,7 @@
 permalink: requiredIf
 title: requiredIf
 category: existence
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/existence/requiredIf.ts
 ---
 
 Enforces the field value to exist when the target field exists. For example:

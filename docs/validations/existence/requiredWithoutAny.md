@@ -2,6 +2,7 @@
 permalink: requiredWithoutAny
 title: requiredWithoutAny
 category: existence
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/existence/requiredWithoutAny.ts
 ---
 
 Enforces the field value to exist when any of the expected fields are

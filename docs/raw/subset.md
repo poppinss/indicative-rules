@@ -2,6 +2,7 @@
 permalink: subset
 title: subset
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/subset.ts
 ---
 
 Returns a boolean telling if an array is sorted in ascending

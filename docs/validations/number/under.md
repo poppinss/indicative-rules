@@ -2,6 +2,7 @@
 permalink: under
 title: under
 category: number
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/number/under.ts
 ---
 
 Enforces the field value to be under the defined value.

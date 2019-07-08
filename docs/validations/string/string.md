@@ -2,6 +2,7 @@
 permalink: string
 title: string
 category: string
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/string/string.ts
 ---
 
 Enforces the field value to be a valid string.

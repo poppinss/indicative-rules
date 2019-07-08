@@ -2,6 +2,7 @@
 permalink: in
 title: in
 category: primitives
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/primitives/in.ts
 ---
 
 Enforces the field value to be one of the allowed values.

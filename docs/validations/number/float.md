@@ -2,6 +2,7 @@
 permalink: float
 title: float
 category: number
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/number/float.ts
 ---
 
 Enforce the field value to be valid float value. This rule will

@@ -2,6 +2,7 @@
 permalink: truthy
 title: truthy
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/truthy.ts
 ---
 
 Returns a boolean telling if value is truthy or not.

@@ -2,6 +2,7 @@
 permalink: before
 title: before
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/before.ts
 ---
 
 Exports [isBefore](https://date-fns.org/v1.30.1/docs/isBefore) function from `date-fns`. So

@@ -2,6 +2,7 @@
 permalink: normalizeEmail
 title: normalizeEmail
 category: sanitizations
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/sanitizations/normalizeEmail.ts
 ---
 
 Normalizes the email address by removing unwanted characters from it. For example

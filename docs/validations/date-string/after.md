@@ -2,6 +2,7 @@
 permalink: after
 title: after
 category: date string
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/date-string/after.ts
 ---
 
 Enforces the field value to be after the expected date.

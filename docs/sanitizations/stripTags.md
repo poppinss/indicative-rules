@@ -2,6 +2,7 @@
 permalink: stripTags
 title: stripTags
 category: sanitizations
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/sanitizations/stripTags.ts
 ---
 
 Strips HTML tags from a string. If value is not a string, it will be returned

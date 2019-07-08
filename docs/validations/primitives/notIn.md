@@ -2,6 +2,7 @@
 permalink: notIn
 title: notIn
 category: primitives
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/primitives/notIn.ts
 ---
 
 Enforces the field value not to be one of the allowed values.

@@ -2,6 +2,7 @@
 permalink: above
 title: above
 category: number
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/number/above.ts
 ---
 
 Enforces the field value to be above the defined value.

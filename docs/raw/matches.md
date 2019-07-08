@@ -2,6 +2,7 @@
 permalink: matches
 title: matches
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/matches.ts
 ---
 
 Test input against a custom regex.

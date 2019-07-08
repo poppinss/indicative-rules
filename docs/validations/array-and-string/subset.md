@@ -2,6 +2,7 @@
 permalink: subset
 title: subset
 category: array and string
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/array-and-string/subset.ts
 ---
 
 Enforces the value of a given field is a subset of expected values. The

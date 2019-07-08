@@ -6,11 +6,12 @@ import { Stats } from 'fs'
 const docsFor = ['validations', 'sanitizations', 'raw']
 const srcPath = join(__dirname, '..', 'src')
 const docsDir = join(__dirname, '..', 'docs')
+const baseUrl = 'https://github.com/poppinss/indicative-rules/tree/develop/src'
 
 const moduleBlock = /\/\*{1,2}\s*\*\s@module .*\s*\*\//g
 const ignoreLines = ['* @example']
 
-function getMatter (permalink: string, category: string) {
+function getMatter (permalink: string, category: string, filePath: string) {
   category = category.replace(/-/g, ' ')
 
   return [
@@ -18,6 +19,7 @@ function getMatter (permalink: string, category: string) {
     `permalink: ${permalink}`,
     `title: ${permalink}`,
     `category: ${category}`,
+    `gh_url: ${filePath.replace(srcPath, baseUrl)}`,
     '---',
     '',
   ]
@@ -100,7 +102,7 @@ async function srcToDocs (dir: string) {
 
     const category = pathsTree.pop()!
 
-    const matter = getMatter(fnName, category)
+    const matter = getMatter(fnName, category, location)
     const doc = matter.concat(extractComments(filesContents[index]))
     return { comments: doc.join('\n'), location }
   })

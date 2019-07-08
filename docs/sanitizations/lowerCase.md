@@ -2,6 +2,7 @@
 permalink: lowerCase
 title: lowerCase
 category: sanitizations
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/sanitizations/lowerCase.ts
 ---
 
 Converts the field value to lower case. Also, this sanitization rule

@@ -2,6 +2,7 @@
 permalink: plural
 title: plural
 category: sanitizations
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/sanitizations/plural.ts
 ---
 
 Converts a value to it's plural version. If value is not a string

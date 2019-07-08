@@ -2,6 +2,7 @@
 permalink: future
 title: future
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/future.ts
 ---
 
 Exports [isFuture](https://date-fns.org/v1.30.1/docs/isFuture) function from `date-fns`. So

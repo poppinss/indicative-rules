@@ -2,6 +2,7 @@
 permalink: regex
 title: regex
 category: string
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/string/regex.ts
 ---
 
 Enforces the field value to pass a custom regular expression.

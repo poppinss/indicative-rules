@@ -2,6 +2,7 @@
 permalink: after
 title: after
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/after.ts
 ---
 
 Exports [isAfter](https://date-fns.org/v1.30.1/docs/isAfter) function from `date-fns`. So

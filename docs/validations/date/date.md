@@ -2,6 +2,7 @@
 permalink: date
 title: date
 category: date
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/date/date.ts
 ---
 
 Enforces the field value to be a valid date. The rule will

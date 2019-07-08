@@ -2,6 +2,7 @@
 permalink: intersectAll
 title: intersectAll
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/intersectAll.ts
 ---
 
 Returns a boolean telling if all of the `input` array items are

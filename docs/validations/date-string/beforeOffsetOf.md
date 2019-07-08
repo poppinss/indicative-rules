@@ -2,6 +2,7 @@
 permalink: beforeOffsetOf
 title: beforeOffsetOf
 category: date string
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/date-string/beforeOffsetOf.ts
 ---
 
 Enforces the field value to be before a given time period offset.

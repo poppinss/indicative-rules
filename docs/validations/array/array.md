@@ -2,6 +2,7 @@
 permalink: array
 title: array
 category: array
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/array/array.ts
 ---
 
 Enforces the field value to a valid Javascript array.

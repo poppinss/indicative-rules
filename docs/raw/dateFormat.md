@@ -2,6 +2,7 @@
 permalink: dateFormat
 title: dateFormat
 category: raw
+gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/dateFormat.ts
 ---
 
 Returns a boolean telling if value is valid as per the given date format
