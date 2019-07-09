@@ -5,12 +5,8 @@ category: existence
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/existence/required.ts
 ---
 
-Enforces the field value to be not empty. All of the following
-values are considered empty.
- 
-- An empty Object `{}`
-- Empty Array `[]`
-- Empty string, `null` or `undefined`
+Enforces the field value to be not empty. Empty string, `null` and `undefined`
+are considered empty.
  
 ```ts
 import { validations } from 'indicative/validator'
