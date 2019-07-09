@@ -9,15 +9,11 @@
 
 import { getValue } from 'indicative-utils'
 import { ValidationDefination } from 'indicative-compiler'
-import { empty } from '../../raw/empty'
+import { existy } from '../../raw/existy'
 
 /**
- * Enforces the field value to be not empty. All of the following
- * values are considered empty.
- *
- * - An empty Object `{}`
- * - Empty Array `[]`
- * - Empty string, `null` or `undefined`
+ * Enforces the field value to be not empty. Empty string, `null` and `undefined`
+ * are considered empty.
  *
  * ```ts
  * import { validations } from 'indicative/validator'
@@ -38,7 +34,7 @@ const validation: ValidationDefination = {
   async: false,
 
   validate: (data, field) => {
-    return !empty(getValue(data, field))
+    return existy(getValue(data, field))
   },
 }
 
