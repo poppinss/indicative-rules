@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://res.cloudinary.com/adonisjs/image/upload/q_100/v1562577951/Group_2_2x_ohgvej.png" width="600px">
+</div>
+
 # Indicative rules
 > A collection of validation and data sanitization rules used by Indicative.
 
