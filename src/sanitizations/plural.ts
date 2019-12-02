@@ -11,9 +11,9 @@
 * file that was distributed with this source code.
 */
 
-import { SanitizationDefination } from 'indicative-compiler'
+import pluralize from 'pluralize'
 import { getValue, patchValue } from 'indicative-utils'
-import * as pluralize from 'pluralize'
+import { SanitizationDefination } from 'indicative-compiler'
 
 /**
  * Converts a value to it's plural version. If value is not a string

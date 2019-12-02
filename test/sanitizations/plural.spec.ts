@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
 */
 
-import * as test from 'japa'
+import test from 'japa'
 import * as sanitizations from '../../src/sanitizations'
 
 test.group('Sanitizations | Plural', () => {

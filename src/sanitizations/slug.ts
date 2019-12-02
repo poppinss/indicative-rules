@@ -11,9 +11,9 @@
 * file that was distributed with this source code.
 */
 
-import { SanitizationDefination } from 'indicative-compiler'
+import slugify from '@slynova/slug'
 import { getValue, patchValue } from 'indicative-utils'
-import * as slugify from '@slynova/slug'
+import { SanitizationDefination } from 'indicative-compiler'
 
 /**
  * Converts a string to a URL friendly slug. If value is not a string, it will be

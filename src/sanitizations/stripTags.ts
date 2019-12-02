@@ -11,9 +11,10 @@
 * file that was distributed with this source code.
 */
 
-import { SanitizationDefination } from 'indicative-compiler'
+import striptags from 'striptags'
 import { getValue, patchValue } from 'indicative-utils'
-import * as striptags from 'striptags'
+import { SanitizationDefination } from 'indicative-compiler'
+
 import { SanitizationRulesContract } from '../Contracts'
 
 type StripTagsArg = Parameters<SanitizationRulesContract['stripTags']>[0]
