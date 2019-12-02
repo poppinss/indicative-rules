@@ -1,7 +1,7 @@
 ---
 permalink: sorted
 title: sorted
-category: raw
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/sorted.ts
 ---
 

@@ -1,7 +1,7 @@
 ---
 permalink: in
 title: in
-category: primitives
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/primitives/in.ts
 ---
 

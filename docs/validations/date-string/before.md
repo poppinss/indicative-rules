@@ -1,7 +1,7 @@
 ---
 permalink: before
 title: before
-category: date string
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/date-string/before.ts
 ---
 

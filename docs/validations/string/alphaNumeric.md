@@ -1,7 +1,7 @@
 ---
 permalink: alphaNumeric
 title: alphaNumeric
-category: string
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/string/alphaNumeric.ts
 ---
 

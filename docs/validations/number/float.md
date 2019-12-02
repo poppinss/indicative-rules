@@ -1,7 +1,7 @@
 ---
 permalink: float
 title: float
-category: number
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/number/float.ts
 ---
 

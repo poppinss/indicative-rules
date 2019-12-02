@@ -1,7 +1,7 @@
 ---
 permalink: upperCase
 title: upperCase
-category: sanitizations
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/sanitizations/upperCase.ts
 ---
 

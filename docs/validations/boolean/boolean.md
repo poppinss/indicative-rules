@@ -1,7 +1,7 @@
 ---
 permalink: boolean
 title: boolean
-category: boolean
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/boolean/boolean.ts
 ---
 

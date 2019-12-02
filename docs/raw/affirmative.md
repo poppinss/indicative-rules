@@ -1,7 +1,7 @@
 ---
 permalink: affirmative
 title: affirmative
-category: raw
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/affirmative.ts
 ---
 

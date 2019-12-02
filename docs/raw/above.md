@@ -1,7 +1,7 @@
 ---
 permalink: above
 title: above
-category: raw
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/raw/above.ts
 ---
 

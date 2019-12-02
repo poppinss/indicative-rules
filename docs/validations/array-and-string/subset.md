@@ -1,7 +1,7 @@
 ---
 permalink: subset
 title: subset
-category: array and string
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/array-and-string/subset.ts
 ---
 

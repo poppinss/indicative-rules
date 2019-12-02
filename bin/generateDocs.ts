@@ -1,7 +1,7 @@
-import * as klaw from 'klaw'
-import * as fs from 'fs-extra'
-import { join, basename, sep } from 'path'
+import klaw from 'klaw'
+import fs from 'fs-extra'
 import { Stats } from 'fs'
+import { join, basename, sep } from 'path'
 
 const docsFor = ['validations', 'sanitizations', 'raw']
 const srcPath = join(__dirname, '..', 'src')
@@ -11,7 +11,11 @@ const baseUrl = 'https://github.com/poppinss/indicative-rules/tree/develop/src'
 const moduleBlock = /\/\*{1,2}\s*\*\s@module .*\s*\*\//g
 const ignoreLines = ['* @example']
 
-function getMatter (permalink: string, category: string, filePath: string) {
+function getMatter (
+  permalink: string,
+  category: string,
+  filePath: string,
+): string[] {
   category = category.replace(/-/g, ' ')
 
   return [
@@ -33,23 +37,23 @@ function getFiles (
     const files: string[] = []
 
     klaw(location)
-    .on('data', (item: { path: string, stats: Stats }) => {
-      if (!item.stats.isDirectory() && filterFn(item)) {
-        files.push(item.path)
-      }
-    })
-    .on('end', () => resolve(files))
-    .on('error', reject)
+      .on('data', (item: { path: string, stats: Stats }) => {
+        if (!item.stats.isDirectory() && filterFn(item)) {
+          files.push(item.path)
+        }
+      })
+      .on('end', () => resolve(files))
+      .on('error', reject)
   })
 }
 
-async function readFiles (locations: string[]) {
+async function readFiles (locations: string[]): Promise<string[]> {
   return Promise.all(locations.map((location: string) => {
     return fs.readFile(location, 'utf-8')
   }))
 }
 
-function extractComments (contents: string) {
+function extractComments (contents: string): string {
   let context = 'idle'
   const lines: string[] = []
   contents = contents.replace(moduleBlock, '')
@@ -70,8 +74,11 @@ function extractComments (contents: string) {
   return lines.join('\n')
 }
 
-async function writeDocs (basePath: string, nodes: { location: string, comments: string }[]) {
-  Promise.all(nodes.map((node) => {
+async function writeDocs (
+  basePath: string,
+  nodes: { location: string, comments: string }[],
+): Promise<void> {
+  await Promise.all(nodes.map((node) => {
     const location = join(basePath, node.location.replace(srcPath, '').replace(/\.ts$/, '.md'))
     return fs.outputFile(location, node.comments)
   }))
@@ -87,7 +94,7 @@ async function writeDocs (basePath: string, nodes: { location: string, comments:
  *
  * @return {void}
  */
-async function srcToDocs (dir: string) {
+async function srcToDocs (dir: string): Promise<void> {
   const location = join(srcPath, dir)
   const srcFiles = await getFiles(location, (item) => {
     return item.path.endsWith('.ts') && !item.path.endsWith('index.ts')
@@ -95,16 +102,16 @@ async function srcToDocs (dir: string) {
 
   const filesContents = await readFiles(srcFiles)
 
-  const filesComments = srcFiles.map((location, index) => {
-    const fnName = basename(location).replace(/\.ts$/, '')
+  const filesComments = srcFiles.map((srcFile, index) => {
+    const fnName = basename(srcFile).replace(/\.ts$/, '')
     const pathsTree = location.split(sep)
     pathsTree.pop()
 
     const category = pathsTree.pop()!
 
-    const matter = getMatter(fnName, category, location)
+    const matter = getMatter(fnName, category, srcFile)
     const doc = matter.concat(extractComments(filesContents[index]))
-    return { comments: doc.join('\n'), location }
+    return { comments: doc.join('\n'), location: srcFile }
   })
 
   await writeDocs(docsDir, filesComments)

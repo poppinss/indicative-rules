@@ -1,7 +1,7 @@
 ---
 permalink: ipv4
 title: ipv4
-category: string
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/string/ipv4.ts
 ---
 

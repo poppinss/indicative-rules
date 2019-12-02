@@ -1,7 +1,7 @@
 ---
 permalink: requiredWithoutAny
 title: requiredWithoutAny
-category: existence
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/existence/requiredWithoutAny.ts
 ---
 

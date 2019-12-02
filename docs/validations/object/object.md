@@ -1,7 +1,7 @@
 ---
 permalink: object
 title: object
-category: object
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/object/object.ts
 ---
 

@@ -1,7 +1,7 @@
 ---
 permalink: equals
 title: equals
-category: primitives
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/primitives/equals.ts
 ---
 

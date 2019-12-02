@@ -1,7 +1,7 @@
 ---
 permalink: ipv6
 title: ipv6
-category: string
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/string/ipv6.ts
 ---
 

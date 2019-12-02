@@ -11,8 +11,8 @@
 * file that was distributed with this source code.
 */
 
+import validator from 'validator'
 import { ParsedRule } from 'indicative-parser'
-import { normalizeEmail } from 'validator'
 
 /**
  * Allowed keys for date offset
@@ -84,7 +84,7 @@ export interface ValidationRulesContract {
 export interface SanitizationRulesContract {
   escape (): ParsedRule,
   lowerCase (args?: [string]): ParsedRule,
-  normalizeEmail (options?: [Parameters<typeof normalizeEmail>[1]]): ParsedRule,
+  normalizeEmail (options?: [validator.NormalizeEmailOptions]): ParsedRule,
   plural (): ParsedRule,
   singular (): ParsedRule,
   slug (): ParsedRule,

@@ -1,7 +1,7 @@
 ---
 permalink: required
 title: required
-category: existence
+category: src
 gh_url: https://github.com/poppinss/indicative-rules/tree/develop/src/validations/existence/required.ts
 ---
 
