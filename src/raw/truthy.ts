@@ -34,4 +34,4 @@ import { existy } from './existy'
  * is.truthy('hello world') // true
  * ```
  */
-export const truthy = (input: any) => existy(input) && input !== false && input !== 0
+export const truthy = (input: any): boolean => existy(input) && input !== false && input !== 0

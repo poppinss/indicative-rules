@@ -45,9 +45,9 @@ test.group('raw | isBeforeOffset', () => {
     assert.isTrue(isBeforeOffset)
   })
 
-  test('return false when calc unit is invalid', (assert) => {
+  test('raise exception when calcUnit is invalid', (assert) => {
     const calcUnit = 'foo' as any
-    const isBeforeOffset = Is.beforeOffsetOf(subMonths(new Date(), 16), 1, calcUnit)
-    assert.isFalse(isBeforeOffset)
+    const fn = (): any => Is.beforeOffsetOf(subMonths(new Date(), 16), 1, calcUnit)
+    assert.throw(fn, 'Invalid time calculation key foo')
   })
 })

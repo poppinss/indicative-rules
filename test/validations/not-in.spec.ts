@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | notIn', () => {
-  test('throw exception when notIn collection is not defined', async (assert) => {
+  test('throw exception when notIn collection is not defined', (assert) => {
     const args = []
-    const fn = () => validations.notIn.compile!(args)
+    const fn = (): any => validations.notIn.compile!(args)
     assert.throw(fn, 'notIn:make sure to define search collection')
   })
 
-  test('return args as it is when valid', async (assert) => {
+  test('return args as it is when valid', (assert) => {
     const args = ['admin', 'super', 'root']
     assert.deepEqual(validations.notIn.compile!(args), args)
   })
 
-  test('return false when field value is in defined fields', async (assert) => {
+  test('return false when field value is in defined fields', (assert) => {
     const data = { username: 'admin' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -38,7 +38,7 @@ test.group('Validations | notIn', () => {
     assert.isFalse(validations.notIn.validate(root, field, args, config))
   })
 
-  test('work fine when field value is not one of the given options', async (assert) => {
+  test('work fine when field value is not one of the given options', (assert) => {
     const data = { username: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'

@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | alpha', () => {
-  test('return false when value is not alpha', async (assert) => {
+  test('return false when value is not alpha', (assert) => {
     const data = { username: 'virk1234' }
     const field = 'username'
     const root = { original: data, tip: data, pointer: '' }
@@ -27,7 +27,7 @@ test.group('Validations | alpha', () => {
     assert.isFalse(validations.alpha.validate(root, field, args, config))
   })
 
-  test('return false when value is number', async (assert) => {
+  test('return false when value is number', (assert) => {
     const data = { username: 1234 }
     const field = 'username'
     const root = { original: data, tip: data, pointer: '' }
@@ -36,7 +36,7 @@ test.group('Validations | alpha', () => {
     assert.isFalse(validations.alpha.validate(root, field, args, config))
   })
 
-  test('work fine when value is a valid alpha', async (assert) => {
+  test('work fine when value is a valid alpha', (assert) => {
     const data = { username: 'virk' }
     const field = 'username'
     const root = { original: data, tip: data, pointer: '' }

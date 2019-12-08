@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | confirmed', () => {
-  test('work fine when the confirmed field is equal', async (assert) => {
+  test('work fine when the confirmed field is equal', (assert) => {
     const data = { password: '1234', password_confirmation: '1234' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -28,7 +28,7 @@ test.group('Validations | confirmed', () => {
     assert.isTrue(result)
   })
 
-  test('return false when then confirmed field isn\'t equal', async (assert) => {
+  test('return false when then confirmed field isn\'t equal', (assert) => {
     const data = { password: '1234', password_confirmation: '12345' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -37,7 +37,7 @@ test.group('Validations | confirmed', () => {
     assert.isFalse(validations.confirmed.validate(root, field, args, config))
   })
 
-  test('return false confirmed value is undefined', async (assert) => {
+  test('return false confirmed value is undefined', (assert) => {
     const data = { password: '1234', password_confirmation: undefined }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -46,7 +46,7 @@ test.group('Validations | confirmed', () => {
     assert.isFalse(validations.confirmed.validate(root, field, args, config))
   })
 
-  test('return true when data types are different', async (assert) => {
+  test('return true when data types are different', (assert) => {
     const data = {
       password: '1234',
       password_confirmation: 1234,

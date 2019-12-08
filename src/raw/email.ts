@@ -14,6 +14,7 @@
 // email (sources from jsen validator):
 // http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address#answer-8829363
 // http://www.w3.org/TR/html5/forms.html#valid-e-mail-address (search for 'willful violation')
+/* eslint max-len: "off" */
 const emailRegex = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*$/i
 
 /**

@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | required', () => {
-  test('return false when field is not defined', async (assert) => {
+  test('return false when field is not defined', (assert) => {
     const data = {}
     const root = { original: data, tip: data, pointer: '' }
     const field = 'name'
@@ -26,7 +26,7 @@ test.group('Validations | required', () => {
     assert.isFalse(validations.required.validate(root, field, args, config))
   })
 
-  test('return false when field is defined but empty', async (assert) => {
+  test('return false when field is defined but empty', (assert) => {
     const data = { name: '' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'name'
@@ -35,7 +35,7 @@ test.group('Validations | required', () => {
     assert.isFalse(validations.required.validate(root, field, args, config))
   })
 
-  test('return true when field is defined and has value', async (assert) => {
+  test('return true when field is defined and has value', (assert) => {
     const data = { name: 'virk' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'name'
@@ -45,7 +45,7 @@ test.group('Validations | required', () => {
     assert.isTrue(result)
   })
 
-  test('return true when field is defined and has negative boolean value', async (assert) => {
+  test('return true when field is defined and has negative boolean value', (assert) => {
     const data = { name: false }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'name'
@@ -55,7 +55,7 @@ test.group('Validations | required', () => {
     assert.isTrue(result)
   })
 
-  test('return true when field is defined and has negative numeric value', async (assert) => {
+  test('return true when field is defined and has negative numeric value', (assert) => {
     const data = { name: 0 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'name'
@@ -65,7 +65,7 @@ test.group('Validations | required', () => {
     assert.isTrue(result)
   })
 
-  test('return true when field value is empty array', async (assert) => {
+  test('return true when field value is empty array', (assert) => {
     const data = { users: [] }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'users'
@@ -75,7 +75,7 @@ test.group('Validations | required', () => {
     assert.isTrue(result)
   })
 
-  test('return true when field value is empty object', async (assert) => {
+  test('return true when field value is empty object', (assert) => {
     const data = { user: {} }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'user'

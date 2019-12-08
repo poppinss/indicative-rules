@@ -14,34 +14,34 @@ import { DateOffsetKeys } from '../src/Contracts'
  * Month related functions
  */
 const months = {
-  years: (unit: number) => unit * 12,
-  quarters: (unit: number) => unit * 3,
-  months: (unit: number) => unit,
+  years: (unit: number): number => unit * 12,
+  quarters: (unit: number): number => unit * 3,
+  months: (unit: number): number => unit,
 }
 
 /**
  * Days related functions
  */
 const days = {
-  weeks: (unit: number) => unit * 7,
-  days: (unit: number) => unit,
+  weeks: (unit: number): number => unit * 7,
+  days: (unit: number): number => unit,
 }
 
 /**
  * Milliseconds related functions
  */
 const milliseconds = {
-  hours: (unit: number) => unit * 3600000,
-  minutes: (unit: number) => unit * 60000,
-  seconds: (unit: number) => unit * 1000,
-  milliseconds: (unit: number) => unit,
+  hours: (unit: number): number => unit * 3600000,
+  minutes: (unit: number): number => unit * 60000,
+  seconds: (unit: number): number => unit * 1000,
+  milliseconds: (unit: number): number => unit,
 }
 
 /**
  * The job of this method is to ensure that we pull less dependencies from
  * date-fns.
  */
-export const calcUnits = (diffUnit: number, key: DateOffsetKeys, operator: string) => {
+export const calcUnits = (diffUnit: number, key: DateOffsetKeys, operator: string): Date => {
   if (months[key]) {
     return addMonths(new Date(), operator === '-' ? -months[key](diffUnit) : months[key](diffUnit))
   }
@@ -56,6 +56,8 @@ export const calcUnits = (diffUnit: number, key: DateOffsetKeys, operator: strin
       operator === '-' ? -milliseconds[key](diffUnit) : milliseconds[key](diffUnit),
     )
   }
+
+  throw new Error(`Invalid time calculation key ${key}`)
 }
 
 /**

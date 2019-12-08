@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | in', () => {
-  test('throw exception when `in` collection is not defined', async (assert) => {
+  test('throw exception when `in` collection is not defined', (assert) => {
     const args = []
-    const fn = () => validations.in.compile!(args)
+    const fn = (): any => validations.in.compile!(args)
     assert.throw(fn, 'in:make sure to define search collection')
   })
 
-  test('returns args as it is when valid', async (assert) => {
+  test('returns args as it is when valid', (assert) => {
     const args = ['foo', 'bar']
     assert.deepEqual(validations.in.compile!(args), args)
   })
 
-  test('return false when field value is not in defined fields', async (assert) => {
+  test('return false when field value is not in defined fields', (assert) => {
     const data = { gender: 'Foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'gender'
@@ -38,7 +38,7 @@ test.group('Validations | in', () => {
     assert.isFalse(validations.in.validate(root, field, args, config))
   })
 
-  test('work fine when value of field is under one of the defined values', async (assert) => {
+  test('work fine when value of field is under one of the defined values', (assert) => {
     const data = { gender: 'F' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'gender'
@@ -48,7 +48,7 @@ test.group('Validations | in', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when expected values are integer', async (assert) => {
+  test('work fine when expected values are integer', (assert) => {
     const data = { marks: 10 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'marks'

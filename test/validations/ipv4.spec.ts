@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | ipv4', () => {
-  test('return false when value is not a valid ipv4 address', async (assert) => {
+  test('return false when value is not a valid ipv4 address', (assert) => {
     const data = { user_ip: '2001:DB8:0:0:1::1' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'user_ip'
@@ -27,7 +27,7 @@ test.group('Validations | ipv4', () => {
     assert.isFalse(validations.ipv4.validate(root, field, args, config))
   })
 
-  test('work fine when value is a valid ipv4 address', async (assert) => {
+  test('work fine when value is a valid ipv4 address', (assert) => {
     const data = { user_ip: '127.0.0.1' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'user_ip'
@@ -37,7 +37,7 @@ test.group('Validations | ipv4', () => {
     assert.isTrue(result)
   })
 
-  test('return false when value is not a valid string', async (assert) => {
+  test('return false when value is not a valid string', (assert) => {
     const data = { user_ip: 10 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'user_ip'

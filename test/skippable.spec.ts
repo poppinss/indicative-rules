@@ -61,6 +61,26 @@ const dataPackets = {
     field: 'age',
     args: [new RegExp('^0-9')],
   },
+  afterOffsetOf: {
+    missing: {
+      registerationDate: undefined,
+    },
+    empty: {
+      registerationDate: null,
+    },
+    field: 'registerationDate',
+    args: ['2', 'months'],
+  },
+  beforeOffsetOf: {
+    missing: {
+      registerationDate: undefined,
+    },
+    empty: {
+      registerationDate: null,
+    },
+    field: 'registerationDate',
+    args: ['2', 'months'],
+  },
   '*': {
     missing: {
       age: undefined,

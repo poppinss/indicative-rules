@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | notEquals', () => {
-  test('throw erorr when comparison arg is missing', async (assert) => {
+  test('throw erorr when comparison arg is missing', (assert) => {
     const args = []
-    const fn = () => validations.notEquals.compile!(args)
+    const fn = (): any => validations.notEquals.compile!(args)
     assert.throw(fn, 'notEquals:make sure to define comparison value')
   })
 
-  test('return args as it is when valid', async (assert) => {
+  test('return args as it is when valid', (assert) => {
     const args = ['bar']
     assert.deepEqual(validations.notEquals.compile!(args), args)
   })
 
-  test('return false when value of targeted field is equal to defined value', async (assert) => {
+  test('return false when value of targeted field is equal to defined value', (assert) => {
     const data = { title: 'bar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'title'
@@ -38,7 +38,7 @@ test.group('Validations | notEquals', () => {
     assert.isFalse(validations.notEquals.validate(root, field, args, config))
   })
 
-  test('work fine when value for field does not matches to defined value', async (assert) => {
+  test('work fine when value for field does not matches to defined value', (assert) => {
     const data = { title: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'title'

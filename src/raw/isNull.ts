@@ -22,4 +22,4 @@
  * }
  * ```
  */
-export const isNull = (input: any) => input === null
+export const isNull = (input: any): boolean => input === null

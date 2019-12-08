@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | boolean', () => {
-  test('return false when value is a number', async (assert) => {
+  test('return false when value is a number', (assert) => {
     const data = { is_admin: 20 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -28,7 +28,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: 20 })
   })
 
-  test('return false when value is a string', async (assert) => {
+  test('return false when value is a string', (assert) => {
     const data = { is_admin: '20' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -39,7 +39,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: '20' })
   })
 
-  test('work fine when value is a valid positive boolean', async (assert) => {
+  test('work fine when value is a valid positive boolean', (assert) => {
     const data = { is_admin: true }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -51,7 +51,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: true })
   })
 
-  test('work fine when value is a valid negative boolean', async (assert) => {
+  test('work fine when value is a valid negative boolean', (assert) => {
     const data = { is_admin: false }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -63,7 +63,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: false })
   })
 
-  test('work fine when value is a valid positive numeric boolean', async (assert) => {
+  test('work fine when value is a valid positive numeric boolean', (assert) => {
     const data: { is_admin: any } = { is_admin: 1 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -75,7 +75,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: true })
   })
 
-  test('work fine when value is a valid negative numeric boolean', async (assert) => {
+  test('work fine when value is a valid negative numeric boolean', (assert) => {
     const data: { is_admin: any } = { is_admin: 0 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -87,7 +87,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: false })
   })
 
-  test('work fine when value is a string representation of 0', async (assert) => {
+  test('work fine when value is a string representation of 0', (assert) => {
     const data: { is_admin: any } = { is_admin: '0' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -99,7 +99,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: false })
   })
 
-  test('work fine when value is a string representation of 1', async (assert) => {
+  test('work fine when value is a string representation of 1', (assert) => {
     const data: { is_admin: any } = { is_admin: '1' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'is_admin'
@@ -111,7 +111,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: true })
   })
 
-  test('work fine when value is a string representation of true', async (assert) => {
+  test('work fine when value is a string representation of true', (assert) => {
     const data: { is_admin: any } = { is_admin: 'true' }
     const field = 'is_admin'
     const root = { original: data, tip: data, pointer: '' }
@@ -123,7 +123,7 @@ test.group('Validations | boolean', () => {
     assert.deepEqual(data, { is_admin: true })
   })
 
-  test('work fine when value is a string representation of false', async (assert) => {
+  test('work fine when value is a string representation of false', (assert) => {
     const data: { is_admin: any } = { is_admin: 'false' }
     const field = 'is_admin'
     const root = { original: data, tip: data, pointer: '' }

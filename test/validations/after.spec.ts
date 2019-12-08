@@ -18,24 +18,24 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | after', () => {
-  test('throw exception when after value is not defined', async (assert) => {
+  test('throw exception when after value is not defined', (assert) => {
     const args: any[] = []
-    const fn = () => validations.after.compile!(args)
+    const fn = (): any => validations.after.compile!(args)
     assert.throw(fn, 'after:make sure to define the after date')
   })
 
-  test('throw exception when after value is defined as null', async (assert) => {
+  test('throw exception when after value is defined as null', (assert) => {
     const args: any[] = [null]
-    const fn = () => validations.after.compile!(args)
+    const fn = (): any => validations.after.compile!(args)
     assert.throw(fn, 'after:after date must be defined as string or date object')
   })
 
-  test('return args as date when is a valid date', async (assert) => {
+  test('return args as date when is a valid date', (assert) => {
     const args: any[] = ['2010-11-20']
     assert.deepEqual(validations.after.compile!(args), [new Date('2010-11-20')])
   })
 
-  test('return false when date is not after defined date', async (assert) => {
+  test('return false when date is not after defined date', (assert) => {
     const data = { dob: '1980-11-20' }
     const field = 'dob'
     const root = { original: data, tip: data, pointer: '' }
@@ -44,7 +44,7 @@ test.group('Validations | after', () => {
     assert.isFalse(validations.after.validate(root, field, args, config))
   })
 
-  test('work fine when value is after defined date', async (assert) => {
+  test('work fine when value is after defined date', (assert) => {
     const data = { dob: '2011-01-01' }
     const field = 'dob'
     const root = { original: data, tip: data, pointer: '' }
@@ -54,7 +54,7 @@ test.group('Validations | after', () => {
     assert.isTrue(result)
   })
 
-  test('return false when value is not castable', async (assert) => {
+  test('return false when value is not castable', (assert) => {
     const data = {
       field1: {},
       field2: [],

@@ -18,19 +18,19 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | startsWith', () => {
-  test('throw exception when substring arg is not defined', async (assert) => {
+  test('throw exception when substring arg is not defined', (assert) => {
     const args = []
-    const fn = () => validations.startsWith.compile!(args)
+    const fn = (): any => validations.startsWith.compile!(args)
 
     assert.throw(fn, 'startsWith:make sure to define substring')
   })
 
-  test('returns args as it is when valid', async (assert) => {
+  test('returns args as it is when valid', (assert) => {
     const args = ['D']
     assert.deepEqual(validations.startsWith.compile!(args), args)
   })
 
-  test('return false when string does not startsWith defined substring', async (assert) => {
+  test('return false when string does not startsWith defined substring', (assert) => {
     const data = { username: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -39,7 +39,7 @@ test.group('Validations | startsWith', () => {
     assert.isFalse(validations.startsWith.validate(root, field, args, config))
   })
 
-  test('work fine when field value startsWith given string', async (assert) => {
+  test('work fine when field value startsWith given string', (assert) => {
     const data = { username: 'Doe' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'

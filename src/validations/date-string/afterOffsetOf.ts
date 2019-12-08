@@ -68,7 +68,15 @@ const validation: ValidationDefination = {
 
   validate: (data, field, [diffUnit, key]: ComparisonArg, config: RulesConfig) => {
     const fieldValue = getValue(data, field)
-    return skippable(fieldValue, field, config) || afterOffsetOf(fieldValue, diffUnit, key)
+    if (skippable(fieldValue, field, config)) {
+      return true
+    }
+
+    if (!fieldValue) {
+      return false
+    }
+
+    return afterOffsetOf(fieldValue, diffUnit, key)
   },
 }
 

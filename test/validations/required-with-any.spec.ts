@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | requiredWithAny', () => {
-  test('throw exception when conditional field is not defined', async (assert) => {
+  test('throw exception when conditional field is not defined', (assert) => {
     const args = []
-    const fn = () => validations.requiredWithAny.compile!(args)
+    const fn = (): any => validations.requiredWithAny.compile!(args)
     assert.throw(fn, 'requiredWithAny:make sure to define one or more target fields')
   })
 
-  test('return args as it is when validates successfully', async (assert) => {
+  test('return args as it is when validates successfully', (assert) => {
     const args = ['username', 'email']
     assert.deepEqual(validations.requiredWithAny.compile!(args), args)
   })
 
-  test('work fine when none of the targeted fields are present', async (assert) => {
+  test('work fine when none of the targeted fields are present', (assert) => {
     const data = {}
 
     const root = { original: data, tip: data, pointer: '' }
@@ -40,7 +40,7 @@ test.group('Validations | requiredWithAny', () => {
     assert.isTrue(result)
   })
 
-  test('return false when targeted fields are present but actual field is missing', async (assert) => {
+  test('return false when targeted fields are present but actual field is missing', (assert) => {
     const data = { username: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -49,7 +49,7 @@ test.group('Validations | requiredWithAny', () => {
     assert.isFalse(validations.requiredWithAny.validate(root, field, args, config))
   })
 
-  test('return false when targeted fields are present but actual field value is null', async (assert) => {
+  test('return false when targeted fields are present but actual field value is null', (assert) => {
     const data = { username: 'foo', password: null }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -58,7 +58,7 @@ test.group('Validations | requiredWithAny', () => {
     assert.isFalse(validations.requiredWithAny.validate(root, field, args, config))
   })
 
-  test('work fine when targeted fields are present and actual field value is valid', async (assert) => {
+  test('work fine when targeted fields are present and actual field value is valid', (assert) => {
     const data = { username: 'foo', password: 'bar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'

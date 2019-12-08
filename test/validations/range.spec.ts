@@ -18,31 +18,31 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | range', () => {
-  test('throw exception when max value is not defined', async (assert) => {
+  test('throw exception when max value is not defined', (assert) => {
     const args = [18]
-    const fn = () => validations.range.compile!(args)
+    const fn = (): any => validations.range.compile!(args)
     assert.throw(fn, 'range:make sure to define min and max values')
   })
 
-  test('throw exception when min value is null', async (assert) => {
+  test('throw exception when min value is null', (assert) => {
     const args = [null, 60]
-    const fn = () => validations.range.compile!(args)
+    const fn = (): any => validations.range.compile!(args)
     assert.throw(fn, 'range:min and max values must be defined as integers')
   })
 
-  test('throw exception when max value is null', async (assert) => {
+  test('throw exception when max value is null', (assert) => {
     const args = [60, null]
-    const fn = () => validations.range.compile!(args)
+    const fn = (): any => validations.range.compile!(args)
     assert.throw(fn, 'range:min and max values must be defined as integers')
   })
 
-  test('should not throw an error when min value is zero', async (assert) => {
+  test('should not throw an error when min value is zero', (assert) => {
     const args = [0, 60]
     const result = validations.range.compile!(args)
     assert.deepEqual(result, args)
   })
 
-  test('return false when value of field is less then defined range', async (assert) => {
+  test('return false when value of field is less then defined range', (assert) => {
     const data = { age: 16 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
@@ -51,7 +51,7 @@ test.group('Validations | range', () => {
     assert.isFalse(validations.range.validate(root, field, args, config))
   })
 
-  test('return false when value of field is greater then defined range', async (assert) => {
+  test('return false when value of field is greater then defined range', (assert) => {
     const data = { age: 61 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
@@ -60,7 +60,7 @@ test.group('Validations | range', () => {
     assert.isFalse(validations.range.validate(root, field, args, config))
   })
 
-  test('work fine when max value is zero', async (assert) => {
+  test('work fine when max value is zero', (assert) => {
     const data = { temp: -5 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'temp'
@@ -70,7 +70,7 @@ test.group('Validations | range', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when field value is under defined range', async (assert) => {
+  test('work fine when field value is under defined range', (assert) => {
     const data = { age: 20 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
@@ -80,7 +80,7 @@ test.group('Validations | range', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when field value is same as the minimum value', async (assert) => {
+  test('work fine when field value is same as the minimum value', (assert) => {
     const data = { age: 18 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
@@ -90,7 +90,7 @@ test.group('Validations | range', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when field value is same as the maximum value', async (assert) => {
+  test('work fine when field value is same as the maximum value', (assert) => {
     const data = { age: 60 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'

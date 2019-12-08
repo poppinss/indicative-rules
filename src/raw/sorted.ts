@@ -23,7 +23,7 @@
  * is.sorted([1, 2, 4, 3, 5, 6]) // false
  * ```
  */
-export const sorted = (input: number[] | string[]) => {
+export const sorted = (input: number[] | string[]): boolean => {
   if (!Array.isArray(input)) {
     return false
   }

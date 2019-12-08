@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | under', () => {
-  test('throw exception when under value is missing args', async (assert) => {
+  test('throw exception when under value is missing args', (assert) => {
     const args = []
-    const fn = () => validations.under.compile!(args)
+    const fn = (): any => validations.under.compile!(args)
     assert.throw(fn, 'under:make sure to define max value')
   })
 
-  test('returns args as number when defined', async (assert) => {
+  test('returns args as number when defined', (assert) => {
     const args = ['10']
     assert.deepEqual(validations.under.compile!(args), [10])
   })
 
-  test('return false when value of field is greater than defined value', async (assert) => {
+  test('return false when value of field is greater than defined value', (assert) => {
     const data = { age: 11 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
@@ -38,7 +38,7 @@ test.group('Validations | under', () => {
     assert.isFalse(validations.under.validate(root, field, args, config))
   })
 
-  test('return false when value of field is equal to the defined value', async (assert) => {
+  test('return false when value of field is equal to the defined value', (assert) => {
     const data = { age: 10 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
@@ -47,7 +47,7 @@ test.group('Validations | under', () => {
     assert.isFalse(validations.under.validate(root, field, args, config))
   })
 
-  test('work fine when value of field is less than defined value', async (assert) => {
+  test('work fine when value of field is less than defined value', (assert) => {
     const data = { age: 8 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'

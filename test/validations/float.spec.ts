@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | float', () => {
-  test('work fine when string value can be casted from a string', async (assert) => {
+  test('work fine when string value can be casted from a string', (assert) => {
     const data: { marks: any } = { marks: '10' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'marks'
@@ -30,7 +30,7 @@ test.group('Validations | float', () => {
     assert.deepEqual(data, { marks: 10 })
   })
 
-  test('return true when value has decimal points', async (assert) => {
+  test('return true when value has decimal points', (assert) => {
     const data = { marks: 10.1 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'marks'
@@ -41,7 +41,7 @@ test.group('Validations | float', () => {
     assert.deepEqual(data, { marks: 10.1 })
   })
 
-  test('work fine when value is an integer', async (assert) => {
+  test('work fine when value is an integer', (assert) => {
     const data = { marks: 10 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'marks'
@@ -53,7 +53,7 @@ test.group('Validations | float', () => {
     assert.deepEqual(data, { marks: 10 })
   })
 
-  test('work fine when value is an integer with zero precision', async (assert) => {
+  test('work fine when value is an integer with zero precision', (assert) => {
     const data = { marks: 10.0 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'marks'
@@ -65,7 +65,7 @@ test.group('Validations | float', () => {
     assert.deepEqual(data, { marks: 10 })
   })
 
-  test('return true when field has a decimal string value', async (assert) => {
+  test('return true when field has a decimal string value', (assert) => {
     const data: { marks: any } = { marks: '10.10' }
     const field = 'marks'
     const root = { original: data, tip: data, pointer: '' }

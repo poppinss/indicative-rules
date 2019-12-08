@@ -22,6 +22,6 @@
  * is.same(10, 22) // true
  * ```
  */
-export const sameType = (input: any, comparsionInput: any) => {
+export const sameType = (input: any, comparsionInput: any): boolean => {
   return typeof (input) === typeof (comparsionInput)
 }

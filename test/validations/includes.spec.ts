@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | includes', () => {
-  test('throw exception when `includes` collection is missing', async (assert) => {
+  test('throw exception when `includes` collection is missing', (assert) => {
     const args = []
-    const fn = () => validations.includes.compile!(args)
+    const fn = (): any => validations.includes.compile!(args)
     assert.throw(fn, 'includes:make sure to define substring to match')
   })
 
-  test('return args as it is when it is valid', async (assert) => {
+  test('return args as it is when it is valid', (assert) => {
     const args = ['app']
     assert.deepEqual(validations.includes.compile!(args), args)
   })
 
-  test('return false when string does not include defined substring', async (assert) => {
+  test('return false when string does not include defined substring', (assert) => {
     const data = { dpath: 'foo/bar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'dpath'
@@ -38,7 +38,7 @@ test.group('Validations | includes', () => {
     assert.isFalse(validations.includes.validate(root, field, args, config))
   })
 
-  test('return false when string does not include defined substring', async (assert) => {
+  test('return false when string does not include defined substring', (assert) => {
     const data = { dpath: 'foo/bar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'dpath'
@@ -47,7 +47,7 @@ test.group('Validations | includes', () => {
     assert.isFalse(validations.includes.validate(root, field, args, config))
   })
 
-  test('work fine when field value includes given string', async (assert) => {
+  test('work fine when field value includes given string', (assert) => {
     const data = { dpath: '/app/bar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'dpath'

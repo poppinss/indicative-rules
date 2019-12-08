@@ -18,30 +18,30 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | min', () => {
-  test('throw exception at compile time when min value is missing', async (assert) => {
+  test('throw exception at compile time when min value is missing', (assert) => {
     const args = []
-    const fn = () => validations.min.compile!(args)
+    const fn = (): any => validations.min.compile!(args)
     assert.throw(fn, 'min: make sure to define min length')
   })
 
-  test('throw exception at compile time when min value is not castable to number', async (assert) => {
+  test('throw exception at compile time when min value is not castable to number', (assert) => {
     const args = ['foo']
-    const fn = () => validations.min.compile!(args)
+    const fn = (): any => validations.min.compile!(args)
     assert.throw(fn, 'min: length must be defined as an integer')
   })
 
-  test('throw exception at compile time when min value is null', async (assert) => {
+  test('throw exception at compile time when min value is null', (assert) => {
     const args = [null]
-    const fn = () => validations.min.compile!(args)
+    const fn = (): any => validations.min.compile!(args)
     assert.throw(fn, 'min: length must be defined as an integer')
   })
 
-  test('cast min value to number when is defined in args', async (assert) => {
+  test('cast min value to number when is defined in args', (assert) => {
     const args = ['6']
     assert.deepEqual(validations.min.compile!(args), [6])
   })
 
-  test('return false when length of field is less than defined length', async (assert) => {
+  test('return false when length of field is less than defined length', (assert) => {
     const data = { password: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -50,7 +50,7 @@ test.group('Validations | min', () => {
     assert.isFalse(validations.min.validate(root, field, args, config))
   })
 
-  test('return false when value is not a string or array', async (assert) => {
+  test('return false when value is not a string or array', (assert) => {
     const data = {
       password: 1990909990,
       created_at: new Date(),
@@ -66,7 +66,7 @@ test.group('Validations | min', () => {
     assert.isFalse(validations.min.validate(root, 'is_admin', args, config))
   })
 
-  test('work fine when length of value of field is greater than defined length', async (assert) => {
+  test('work fine when length of value of field is greater than defined length', (assert) => {
     const data = { password: 'foobarbaz' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -76,7 +76,7 @@ test.group('Validations | min', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when length of value of field is equal to the defined length', async (assert) => {
+  test('work fine when length of value of field is equal to the defined length', (assert) => {
     const data = { password: 'foobar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -86,7 +86,7 @@ test.group('Validations | min', () => {
     assert.isTrue(result)
   })
 
-  test('return false when array length less than the min number', async (assert) => {
+  test('return false when array length less than the min number', (assert) => {
     const data = { users: ['virk'] }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'users'
@@ -95,7 +95,7 @@ test.group('Validations | min', () => {
     assert.isFalse(validations.min.validate(root, field, args, config))
   })
 
-  test('work fine when array length is within the min number', async (assert) => {
+  test('work fine when array length is within the min number', (assert) => {
     const data = { users: ['virk', 'nikk'] }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'users'
@@ -105,7 +105,7 @@ test.group('Validations | min', () => {
     assert.isTrue(result)
   })
 
-  test('ignore null value is non strict mode', async (assert) => {
+  test('ignore null value is non strict mode', (assert) => {
     const data = { users: null }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'users'
@@ -115,7 +115,7 @@ test.group('Validations | min', () => {
     assert.isTrue(result)
   })
 
-  test('return false for null value in strict mode', async (assert) => {
+  test('return false for null value in strict mode', (assert) => {
     const data = { users: null }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'users'

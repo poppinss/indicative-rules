@@ -60,13 +60,16 @@ const validation: ValidationDefination = {
     let comparisonValue = getValue(data, `${field}_confirmation`)
 
     /**
-     * Cast type of comparison value when types are different. This is important
-     * since the end-user has no way to cast type of confirmed field. For example:
+     * Cast type of comparison value when types are different. This is
+     * important since the end-user has no way to cast type of the
+     * confirmed field. For example:
      *
-     * 1. Add `number` rule to the `pincode` field, which will cast the pincode to `number`.
-     * 2. Also add `confirmed` rule to `pincode`, now you cannot cast it's value, so we
-     *    need to do type conversion here.
+     * 1. Add `number` rule to the `pincode` field, which will cast the
+     *    pincode to `number`.
+     * 2. Also add `confirmed` rule to `pincode`, now you cannot cast
+     *    it's value, so we need to do type conversion here.
      */
+    /* eslint "valid-typeof": "off" */
     if (typeof (comparisonValue) !== valueType) {
       comparisonValue = castType(comparisonValue, valueType)
     }

@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | same', () => {
-  test('throw exception when comparison field is missing', async (assert) => {
+  test('throw exception when comparison field is missing', (assert) => {
     const args = []
-    const fn = () => validations.same.compile!(args)
+    const fn = (): any => validations.same.compile!(args)
     assert.throw(fn, 'same:make sure to define target field for comparison')
   })
 
-  test('return args as it is when valid', async (assert) => {
+  test('return args as it is when valid', (assert) => {
     const args = ['password']
     assert.deepEqual(validations.same.compile!(args), args)
   })
 
-  test('return false when value of targeted field is not equal to defined field', async (assert) => {
+  test('return false when value of targeted field is not equal to defined field', (assert) => {
     const data = { password: 'foo', 'password_confirm': 'bar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'
@@ -38,7 +38,7 @@ test.group('Validations | same', () => {
     assert.isFalse(validations.same.validate(root, field, args, config))
   })
 
-  test('skip validation when target field does not exists', async (assert) => {
+  test('skip validation when target field does not exists', (assert) => {
     const data = {'password_confirm': 'bar'}
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'
@@ -48,7 +48,7 @@ test.group('Validations | same', () => {
     assert.isTrue(result)
   })
 
-  test('skip validation when actual field does not exists', async (assert) => {
+  test('skip validation when actual field does not exists', (assert) => {
     const data = {}
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'
@@ -58,7 +58,7 @@ test.group('Validations | same', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when value for both field matches', async (assert) => {
+  test('work fine when value for both field matches', (assert) => {
     const data = { password: 'foo', password_confirm: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'
@@ -68,7 +68,7 @@ test.group('Validations | same', () => {
     assert.isTrue(result)
   })
 
-  test('skip validation when targeted field value exists but actual field does not exists', async (assert) => {
+  test('skip validation when targeted field value exists but actual field does not exists', (assert) => {
     const data = { password: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'

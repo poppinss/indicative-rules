@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | date', () => {
-  test('return false when field value is not a string or date', async (assert) => {
+  test('return false when field value is not a string or date', (assert) => {
     const data = {
       field1: '10th',
       field2: {},
@@ -45,7 +45,7 @@ test.group('Validations | date', () => {
     })
   })
 
-  test('cast iso string to date', async (assert) => {
+  test('cast iso string to date', (assert) => {
     const data: { dob: any } = { dob: '2015-10-20' }
     const field = 'dob'
     const root = { original: data, tip: data, pointer: '' }
@@ -60,7 +60,7 @@ test.group('Validations | date', () => {
     assert.equal((data.dob as Date).getFullYear(), 2015)
   })
 
-  test('cast short date string to date', async (assert) => {
+  test('cast short date string to date', (assert) => {
     const data: { dob: any } = { dob: '10/20/2015' }
     const field = 'dob'
     const root = { original: data, tip: data, pointer: '' }
@@ -75,7 +75,7 @@ test.group('Validations | date', () => {
     assert.equal((data.dob as Date).getFullYear(), 2015)
   })
 
-  test('cast long date string to date', async (assert) => {
+  test('cast long date string to date', (assert) => {
     const data: { dob: any } = { dob: 'Oct 20 2015' }
     const field = 'dob'
     const root = { original: data, tip: data, pointer: '' }

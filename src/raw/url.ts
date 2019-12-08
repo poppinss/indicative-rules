@@ -11,6 +11,7 @@
 * file that was distributed with this source code.
 */
 
+/* eslint max-len: "off" */
 const urlRegex = /https?:\/\/(www\.)?([-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,63}|localhost)\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/i
 
 /**
@@ -25,4 +26,4 @@ const urlRegex = /https?:\/\/(www\.)?([-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,63}|
  *   http://foo.co.in
  * ```
  */
-export const url = (input: string) => urlRegex.test(input)
+export const url = (input: string): boolean => urlRegex.test(input)

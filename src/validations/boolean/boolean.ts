@@ -17,7 +17,7 @@ import { RulesConfig } from '../../Contracts'
  * attempt to cast following values to their boolean counter part.
  *
  * [casts]
- *   [label fromText="string ('0')", from="string", to="boolean", toText="boolean (false)"]
+ *  [label fromText="string ('0')", from="string", to="boolean", toText="boolean (false)"]
  *   [label fromText="string ('1')", from="string", to="boolean", toText="boolean (true)"]
  *   [label fromText="string ('false')", from="string", to="boolean", toText="boolean (false)"]
  *   [label fromText="string ('true')", from="string", to="boolean", toText="boolean (true)"]

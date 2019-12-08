@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | url', () => {
-  test('return false when value is not a valid url', async (assert) => {
+  test('return false when value is not a valid url', (assert) => {
     const data = { github_profile: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'github_profile'
@@ -27,7 +27,7 @@ test.group('Validations | url', () => {
     assert.isFalse(validations.url.validate(root, field, args, config))
   })
 
-  test('work fine when value is a valid url', async (assert) => {
+  test('work fine when value is a valid url', (assert) => {
     const data = { github_profile: 'http://github.com/thetutlage' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'github_profile'
@@ -37,7 +37,7 @@ test.group('Validations | url', () => {
     assert.isTrue(result)
   })
 
-  test('return false when value is a number', async (assert) => {
+  test('return false when value is a number', (assert) => {
     const data = { github_profile: 10 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'github_profile'
@@ -46,7 +46,7 @@ test.group('Validations | url', () => {
     assert.isFalse(validations.url.validate(root, field, args, config))
   })
 
-  test('return false when value is a boolean', async (assert) => {
+  test('return false when value is a boolean', (assert) => {
     const data = { github_profile: true }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'github_profile'
@@ -55,7 +55,7 @@ test.group('Validations | url', () => {
     assert.isFalse(validations.url.validate(root, field, args, config))
   })
 
-  test('return false when value is a date', async (assert) => {
+  test('return false when value is a date', (assert) => {
     const data = { github_profile: new Date() }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'github_profile'

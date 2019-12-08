@@ -26,7 +26,7 @@
  * }
  * ```
  */
-export const intersectAny = (input: any[], intersectionArray: any[]) => {
+export const intersectAny = (input: any[], intersectionArray: any[]): boolean => {
   if (!Array.isArray(input) || !Array.isArray(intersectionArray)) {
     return false
   }

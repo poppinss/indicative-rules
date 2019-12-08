@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | endsWith', () => {
-  test('throw exception when substring is missing', async (assert) => {
+  test('throw exception when substring is missing', (assert) => {
     const args: any[] = []
-    const fn = () => validations.endsWith.compile!(args)
+    const fn = (): any => validations.endsWith.compile!(args)
     assert.throw(fn, 'endsWith:make sure to define substring')
   })
 
-  test('return args as it is when valid', async (assert) => {
+  test('return args as it is when valid', (assert) => {
     const args: any[] = ['e']
     assert.deepEqual(validations.endsWith.compile!(args), args)
   })
 
-  test('return false when string does not endsWith defined substring', async (assert) => {
+  test('return false when string does not endsWith defined substring', (assert) => {
     const data = { username: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -38,7 +38,7 @@ test.group('Validations | endsWith', () => {
     assert.isFalse(validations.endsWith.validate(root, field, args, config))
   })
 
-  test('work fine when field value endsWith given string', async (assert) => {
+  test('work fine when field value endsWith given string', (assert) => {
     const data = { username: 'Doe' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'

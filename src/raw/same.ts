@@ -21,4 +21,4 @@
  * is.same('foo', 'foo')
  * ```
  */
-export const same = (input: any, comparsionInput: any) => input === comparsionInput
+export const same = (input: any, comparsionInput: any): boolean => input === comparsionInput

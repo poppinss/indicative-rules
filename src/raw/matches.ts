@@ -21,4 +21,4 @@
  * is.matches(/[a-z]/) // true
  * ```
  */
-export const matches = (input: string, regex: RegExp) => regex.test(input)
+export const matches = (input: string, regex: RegExp): boolean => regex.test(input)

@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | alphaNumeric', () => {
-  test('return false when value is not alpha numeric', async (assert) => {
+  test('return false when value is not alpha numeric', (assert) => {
     const data = { username: 'virk@123' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -27,7 +27,7 @@ test.group('Validations | alphaNumeric', () => {
     assert.isFalse(validations.alphaNumeric.validate(root, field, args, config))
   })
 
-  test('return false when value is a number', async (assert) => {
+  test('return false when value is a number', (assert) => {
     const data = { username: 123 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -36,7 +36,7 @@ test.group('Validations | alphaNumeric', () => {
     assert.isFalse(validations.alphaNumeric.validate(root, field, args, config))
   })
 
-  test('work fine when value is a valid alpha numeric', async (assert) => {
+  test('work fine when value is a valid alpha numeric', (assert) => {
     const data = { username: 'virk123' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'

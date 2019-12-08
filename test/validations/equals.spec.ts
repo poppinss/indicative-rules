@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | equals', () => {
-  test('throw exception when comparison value is missing', async (assert) => {
+  test('throw exception when comparison value is missing', (assert) => {
     const args: any[] = []
-    const fn = () => validations.equals.compile!(args)
+    const fn = (): any => validations.equals.compile!(args)
     assert.throw(fn, 'equals:make sure to define the comparison string')
   })
 
-  test('returns args as it is when valid', async (assert) => {
+  test('returns args as it is when valid', (assert) => {
     const args = ['bar']
     assert.deepEqual(validations.equals.compile!(args), args)
   })
 
-  test('return false when value of targeted field is not equal to defined value', async (assert) => {
+  test('return false when value of targeted field is not equal to defined value', (assert) => {
     const data = { title: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'title'
@@ -38,7 +38,7 @@ test.group('Validations | equals', () => {
     assert.isFalse(validations.equals.validate(root, field, args, config))
   })
 
-  test('work fine when value for field matches to defined value', async (assert) => {
+  test('work fine when value for field matches to defined value', (assert) => {
     const data = { title: 'bar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'title'
@@ -48,7 +48,7 @@ test.group('Validations | equals', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when then under validation is a number', async (assert) => {
+  test('work fine when then under validation is a number', (assert) => {
     const data = { age: 18 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'age'
@@ -58,7 +58,7 @@ test.group('Validations | equals', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when doing negative boolean operations', async (assert) => {
+  test('work fine when doing negative boolean operations', (assert) => {
     const data = { accepted: false }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'accepted'
@@ -68,7 +68,7 @@ test.group('Validations | equals', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when doing numeric operation with 0', async (assert) => {
+  test('work fine when doing numeric operation with 0', (assert) => {
     const data = { accepted: 0 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'accepted'

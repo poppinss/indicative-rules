@@ -47,7 +47,8 @@ test.group('raw | afterOffsetOf', () => {
 
   test('return false when calc unit is invalid', (assert) => {
     const calcUnit = 'foo' as any
-    assert.isFalse(Is.afterOffsetOf(addHours(new Date(), 10), 9, calcUnit))
+    const fn = (): any => Is.afterOffsetOf(addHours(new Date(), 10), 9, calcUnit)
+    assert.throw(fn, 'Invalid time calculation key foo')
   })
 
   test('return false when date is not before defined offset', (assert) => {

@@ -23,7 +23,7 @@
  * is.sorted([1, 2, 4, 3, 5, 6]) // false
  * ```
  */
-export const subset = (input: any[], superset: any[]) => {
+export const subset = (input: any[], superset: any[]): boolean => {
   if (!Array.isArray(input) || !Array.isArray(superset)) {
     return false
   }

@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | object', () => {
-  test('return false when value is not a valid object', async (assert) => {
+  test('return false when value is not a valid object', (assert) => {
     const data = { profile: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'profile'
@@ -27,7 +27,7 @@ test.group('Validations | object', () => {
     assert.isFalse(validations.object.validate(root, field, args, config))
   })
 
-  test('work fine when value is a valid object', async (assert) => {
+  test('work fine when value is a valid object', (assert) => {
     const data = { profile: { username: 'foo'} }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'profile'
@@ -37,7 +37,7 @@ test.group('Validations | object', () => {
     assert.isTrue(result)
   })
 
-  test('return false when value of field is an array', async (assert) => {
+  test('return false when value of field is an array', (assert) => {
     const data = { profile: ['username'] }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'profile'

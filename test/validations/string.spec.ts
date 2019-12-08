@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | string', () => {
-  test('work fine when the field value is a string', async (assert) => {
+  test('work fine when the field value is a string', (assert) => {
     const data = { username: 'david' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -30,7 +30,7 @@ test.group('Validations | string', () => {
     assert.deepEqual(data, { username: 'david' })
   })
 
-  test('return false when the field value is a number', async (assert) => {
+  test('return false when the field value is a number', (assert) => {
     const data: { username: any } = { username: 1234 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -41,7 +41,7 @@ test.group('Validations | string', () => {
     assert.deepEqual(data, { username: 1234 })
   })
 
-  test('return false when the field value is a boolean', async (assert) => {
+  test('return false when the field value is a boolean', (assert) => {
     const data: { username: any } = { username: true }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'username'
@@ -52,7 +52,7 @@ test.group('Validations | string', () => {
     assert.deepEqual(data, { username: true })
   })
 
-  test('return true when the field value is a date', async (assert) => {
+  test('return true when the field value is a date', (assert) => {
     const date = new Date()
     const data: { username: any } = { username: date }
     const root = { original: data, tip: data, pointer: '' }

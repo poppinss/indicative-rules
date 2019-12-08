@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | email', () => {
-  test('should return false when field is defined and does not have valid email', async (assert) => {
+  test('should return false when field is defined and does not have valid email', (assert) => {
     const data = { email: 'virk' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'email'
@@ -27,7 +27,7 @@ test.group('Validations | email', () => {
     assert.isFalse(validations.email.validate(root, field, args, config))
   })
 
-  test('should return false when field is defined as negative boolean', async (assert) => {
+  test('should return false when field is defined as negative boolean', (assert) => {
     const data = { email: false }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'email'
@@ -36,7 +36,7 @@ test.group('Validations | email', () => {
     assert.isFalse(validations.email.validate(root, field, args, config))
   })
 
-  test('should return false when field is defined as 0', async (assert) => {
+  test('should return false when field is defined as 0', (assert) => {
     const data = { email: 0 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'email'
@@ -45,7 +45,7 @@ test.group('Validations | email', () => {
     assert.isFalse(validations.email.validate(root, field, args, config))
   })
 
-  test('work fine when valid email is provided', async (assert) => {
+  test('work fine when valid email is provided', (assert) => {
     const data = { email: 'foo@bar.com' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'email'
@@ -55,7 +55,7 @@ test.group('Validations | email', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when valid email with extension is provided', async (assert) => {
+  test('work fine when valid email with extension is provided', (assert) => {
     const data = { email: 'foo+baz@bar.com' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'email'

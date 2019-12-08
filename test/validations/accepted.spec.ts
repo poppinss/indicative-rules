@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | accepted', () => {
-  test('should return false when field is defined but not accepted', async (assert) => {
+  test('should return false when field is defined but not accepted', (assert) => {
     const data = { terms: false }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'terms'
@@ -27,7 +27,7 @@ test.group('Validations | accepted', () => {
     assert.isFalse(validations.accepted.validate(root, field, args, config))
   })
 
-  test('work fine validation when field is defined and accepted using true', async (assert) => {
+  test('work fine validation when field is defined and accepted using true', (assert) => {
     const data = { terms: true }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'terms'
@@ -37,7 +37,7 @@ test.group('Validations | accepted', () => {
     assert.isTrue(result)
   })
 
-  test('work fine validation when field is defined and accepted using string', async (assert) => {
+  test('work fine validation when field is defined and accepted using string', (assert) => {
     const data = { terms: 'okay' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'terms'

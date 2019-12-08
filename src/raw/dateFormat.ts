@@ -24,7 +24,8 @@ import { format } from 'date-fns'
  * if (is.dateFormat('2010-11-20', ['YYYY-MM-DD'])) {
  * }
  *
- * // You can also check against multiple format to see if it matches any one or not
+ * // You can also check against multiple format to see if it matches any
+ * // one or not
  * if (is.dateFormat('2010-11-20', ['YYYY-MM-DD', 'YYYY/MM/DD'])) {
  * }
  * ```

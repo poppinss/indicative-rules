@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | requiredWithoutAny', () => {
-  test('throw exception when conditional field is not defined', async (assert) => {
+  test('throw exception when conditional field is not defined', (assert) => {
     const args = []
-    const fn = () => validations.requiredWithoutAny.compile!(args)
+    const fn = (): any => validations.requiredWithoutAny.compile!(args)
     assert.throw(fn, 'requiredWithoutAny:make sure to define one or more target fields')
   })
 
-  test('return args as it is when validates successfully', async (assert) => {
+  test('return args as it is when validates successfully', (assert) => {
     const args = ['username', 'email']
     assert.deepEqual(validations.requiredWithoutAny.compile!(args), args)
   })
 
-  test('work fine when all the targeted fields are present', async (assert) => {
+  test('work fine when all the targeted fields are present', (assert) => {
     const data = { username: 'foo', email: 'foo@bar.com' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -39,7 +39,7 @@ test.group('Validations | requiredWithoutAny', () => {
     assert.isTrue(result)
   })
 
-  test('return false when targeted fields and actual field are missing', async (assert) => {
+  test('return false when targeted fields and actual field are missing', (assert) => {
     const data = { username: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -48,7 +48,7 @@ test.group('Validations | requiredWithoutAny', () => {
     assert.isFalse(validations.requiredWithoutAny.validate(root, field, args, config))
   })
 
-  test('return false when targeted fields are missing and actual field is null', async (assert) => {
+  test('return false when targeted fields are missing and actual field is null', (assert) => {
     const data = { username: 'foo', password: null }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'
@@ -57,7 +57,7 @@ test.group('Validations | requiredWithoutAny', () => {
     assert.isFalse(validations.requiredWithoutAny.validate(root, field, args, config))
   })
 
-  test('work fine when the targeted fields are missing and actual field is valid', async (assert) => {
+  test('work fine when the targeted fields are missing and actual field is valid', (assert) => {
     const data = { password: 'foobar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password'

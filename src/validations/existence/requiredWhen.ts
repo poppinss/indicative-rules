@@ -47,7 +47,7 @@ const validation: ValidationDefination = {
   validate: (data, field, [targetField, expectedValue]: ComparisonArg) => {
     const otherValue = getValue(data, targetField)
 
-    // tslint:disable-next-line:triple-equals
+    /* eslint eqeqeq: "off" */
     if (empty(otherValue) || expectedValue != otherValue) {
       return true
     }

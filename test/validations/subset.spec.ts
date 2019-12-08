@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | subset', () => {
-  test('throw exception when subset values are missing', async (assert) => {
+  test('throw exception when subset values are missing', (assert) => {
     const args = []
-    const fn = () => validations.subset.compile!(args)
+    const fn = (): any => validations.subset.compile!(args)
     assert.throw(fn, 'subset:make sure to define subset collection')
   })
 
-  test('returns args when it has length', async (assert) => {
+  test('returns args when it has length', (assert) => {
     const args = ['author', 'comments', 'related-articles']
     assert.deepEqual(validations.subset.compile!(args), args)
   })
 
-  test('work fine when value is a subset of given superset', async (assert) => {
+  test('work fine when value is a subset of given superset', (assert) => {
     const data = { include: ['author'] }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'include'
@@ -41,7 +41,7 @@ test.group('Validations | subset', () => {
     assert.deepEqual(data, { include: ['author'] })
   })
 
-  test('work fine when value is a comma delimited string', async (assert) => {
+  test('work fine when value is a comma delimited string', (assert) => {
     const data: { include: any } = { include: 'author,comments' }
     const field = 'include'
     const root = { original: data, tip: data, pointer: '' }
@@ -53,7 +53,7 @@ test.group('Validations | subset', () => {
     assert.deepEqual(data, { include: ['author', 'comments'] })
   })
 
-  test('return false when value is not a subset of given superset', async (assert) => {
+  test('return false when value is not a subset of given superset', (assert) => {
     const data = { include: ['author', 'comments', 'invalid-relationship'] }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'include'
@@ -63,7 +63,7 @@ test.group('Validations | subset', () => {
     assert.deepEqual(data, { include: ['author', 'comments', 'invalid-relationship'] })
   })
 
-  test('work fine when subset has integer value', async (assert) => {
+  test('work fine when subset has integer value', (assert) => {
     const data: { include: any } = { include: [10] }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'include'
@@ -75,7 +75,7 @@ test.group('Validations | subset', () => {
     assert.deepEqual(data, { include: ['10'] })
   })
 
-  test('return false for non string values', async (assert) => {
+  test('return false for non string values', (assert) => {
     const data = {
       field1: true,
       field2: new Date(),

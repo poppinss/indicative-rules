@@ -45,7 +45,7 @@ const validation: ValidationDefination = {
   validate: (data, field, [comparisonValue]: ComparisonArg, config: RulesConfig) => {
     const fieldValue = getValue(data, field)
 
-    // tslint:disable-next-line:triple-equals
+    /* eslint eqeqeq: "off" */
     return skippable(fieldValue, field, config) || comparisonValue != fieldValue
   },
 }

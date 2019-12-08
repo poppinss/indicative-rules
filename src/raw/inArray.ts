@@ -22,7 +22,7 @@
  * }
  * ```
  */
-export const inArray = (input: any, dict: any[]) => {
+export const inArray = (input: any, dict: any[]): boolean => {
   if (!Array.isArray(dict)) {
     return false
   }

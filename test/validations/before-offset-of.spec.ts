@@ -19,30 +19,30 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | beforeOffsetOf', () => {
-  test('throw exception when offset arguments are missing', async (assert) => {
+  test('throw exception when offset arguments are missing', (assert) => {
     const args: any[] = []
-    const fn = () => validations.beforeOffsetOf.compile!(args)
+    const fn = (): any => validations.beforeOffsetOf.compile!(args)
     assert.throw(fn, 'beforeOffsetOf:make sure to define offset unit and key')
   })
 
-  test('throw exception when offset unit is missing', async (assert) => {
+  test('throw exception when offset unit is missing', (assert) => {
     const args: any[] = [10]
-    const fn = () => validations.beforeOffsetOf.compile!(args)
+    const fn = (): any => validations.beforeOffsetOf.compile!(args)
     assert.throw(fn, 'beforeOffsetOf:make sure to define offset unit and key')
   })
 
-  test('throw exception when offset unit is not a valid key', async (assert) => {
+  test('throw exception when offset unit is not a valid key', (assert) => {
     const args: any[] = [12, 'foo']
-    const fn = () => validations.beforeOffsetOf.compile!(args)
+    const fn = (): any => validations.beforeOffsetOf.compile!(args)
     assert.throw(fn, 'beforeOffsetOf:2nd argument must be a valid calc key')
   })
 
-  test('return args when they are defined', async (assert) => {
+  test('return args when they are defined', (assert) => {
     const args: any[] = ['20', 'days']
     assert.deepEqual(validations.beforeOffsetOf.compile!(args), [20, 'days'])
   })
 
-  test('return false when date is not before defined offset', async (assert) => {
+  test('return false when date is not before defined offset', (assert) => {
     const data = { subscription: new Date() }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'subscription'
@@ -51,7 +51,7 @@ test.group('Validations | beforeOffsetOf', () => {
     assert.isFalse(validations.beforeOffsetOf.validate(root, field, args, config))
   })
 
-  test('return false when value is not castable', async (assert) => {
+  test('return false when value is not castable', (assert) => {
     const data = {
       field1: {},
       field2: [],
@@ -65,7 +65,7 @@ test.group('Validations | beforeOffsetOf', () => {
     assert.isFalse(validations.beforeOffsetOf.validate(root, 'field3', args, config))
   })
 
-  test('work fine when value is before defined offset', async (assert) => {
+  test('work fine when value is before defined offset', (assert) => {
     const data = { subscription: subYears(new Date(), 2) }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'subscription'

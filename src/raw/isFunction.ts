@@ -24,4 +24,4 @@
  * }
  * ```
  */
-export const isFunction = (input: any) => typeof (input) === 'function'
+export const isFunction = (input: any): boolean => typeof (input) === 'function'

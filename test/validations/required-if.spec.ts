@@ -18,18 +18,18 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | requiredIf', () => {
-  test('throw exception when conditional field is not defined', async (assert) => {
+  test('throw exception when conditional field is not defined', (assert) => {
     const args = []
-    const fn = () => validations.requiredIf.compile!(args)
+    const fn = (): any => validations.requiredIf.compile!(args)
     assert.throw(fn, 'requiredIf:make sure to define target field')
   })
 
-  test('return args as it is when validates successfully', async (assert) => {
+  test('return args as it is when validates successfully', (assert) => {
     const args = ['password']
     assert.deepEqual(validations.requiredIf.compile!(args), args)
   })
 
-  test('skip validation when conditional field does not exists', async (assert) => {
+  test('skip validation when conditional field does not exists', (assert) => {
     const data = {}
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'
@@ -39,7 +39,7 @@ test.group('Validations | requiredIf', () => {
     assert.isTrue(result)
   })
 
-  test('return false when conditional field exists and field under validation is missing', async (assert) => {
+  test('return false when conditional field exists and field under validation is missing', (assert) => {
     const data = { password: 'foobar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'
@@ -48,7 +48,7 @@ test.group('Validations | requiredIf', () => {
     assert.isFalse(validations.requiredIf.validate(root, field, args, config))
   })
 
-  test('skip validation when conditional field is null', async (assert) => {
+  test('skip validation when conditional field is null', (assert) => {
     const data = { password: null }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'
@@ -58,7 +58,7 @@ test.group('Validations | requiredIf', () => {
     assert.isTrue(result)
   })
 
-  test('work fine when field under validation is available', async (assert) => {
+  test('work fine when field under validation is available', (assert) => {
     const data = { password: 'foobar', 'password_confirm': 'foobar' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'password_confirm'

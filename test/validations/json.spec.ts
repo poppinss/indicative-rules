@@ -18,7 +18,7 @@ const config: RulesConfig = {
 }
 
 test.group('Validations | json', () => {
-  test('return false when value is not a valid json string', async (assert) => {
+  test('return false when value is not a valid json string', (assert) => {
     const data = { profile: 'foo' }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'profile'
@@ -27,7 +27,7 @@ test.group('Validations | json', () => {
     assert.isFalse(validations.json.validate(root, field, args, config))
   })
 
-  test('work fine when value is a valid json string', async (assert) => {
+  test('work fine when value is a valid json string', (assert) => {
     const data = { profile: JSON.stringify({name: 'foo'}) }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'profile'
@@ -37,7 +37,7 @@ test.group('Validations | json', () => {
     assert.isTrue(result)
   })
 
-  test('return false when value is a boolean', async (assert) => {
+  test('return false when value is a boolean', (assert) => {
     const data = { profile: true }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'profile'
@@ -47,7 +47,7 @@ test.group('Validations | json', () => {
     assert.isFalse(result)
   })
 
-  test('return false when value is a number', async (assert) => {
+  test('return false when value is a number', (assert) => {
     const data = { profile: 22 }
     const root = { original: data, tip: data, pointer: '' }
     const field = 'profile'
