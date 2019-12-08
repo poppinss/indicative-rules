@@ -53,6 +53,7 @@ export interface ValidationRulesContract {
   ipv6 (): ParsedRule,
   json (): ParsedRule,
   max ([maxLength]: [number]): ParsedRule,
+  size ([size]: [number]): ParsedRule,
   min ([minLength]: [number]): ParsedRule,
   notEquals ([comparisonValue]: [any]): ParsedRule,
   notIn (args: any[]): ParsedRule,
