@@ -95,4 +95,24 @@ test.group('Validations | requiredWhen', () => {
     const result = validations.requiredWhen.validate(root, field, args, config)
     assert.isTrue(result)
   })
+
+  test('work fine when validation field exists and conditional field value is in defined array', (assert) => {
+    const data = { country: 'US', state: 'NewYork' }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'state'
+
+    const args = ['country', ['US', 'UK']]
+    const result = validations.requiredWhen.validate(root, field, args, config)
+    assert.isTrue(result)
+  })
+
+  test('return false when conditional field value is in array and validation field is missing', (assert) => {
+    const data = { country: 'US' }
+    const root = { original: data, tip: data, pointer: '' }
+    const field = 'state'
+
+    const args = ['country', ['US', 'UK']]
+    const result = validations.requiredWhen.validate(root, field, args, config)
+    assert.isFalse(result)
+  })
 })

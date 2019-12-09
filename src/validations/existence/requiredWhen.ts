@@ -30,8 +30,21 @@ const MISSING_VALUES = 'requiredWhen:make sure to define target field and it\'s 
  *
  * // or
  * const rules = {
- *   state: [
+ *   address: [
  *     validations.requiredWhen(['checkout_type', 'deliver'])
+ *   ]
+ * }
+ * ```
+ *
+ * You can also define an array of values to match from. For example: Ask for
+ * the `county` when `country=Uk or US`.
+ *
+ * ```ts
+ * import { validations } from 'indicative/validator'
+ *
+ * const rules = {
+ *   state: [
+ *     validations.requiredWhen(['country', ['UK', 'US']])
  *   ]
  * }
  * ```
@@ -44,11 +57,23 @@ const validation: ValidationDefination = {
     return [String(args[0]), args[1]]
   },
 
-  validate: (data, field, [targetField, expectedValue]: ComparisonArg) => {
-    const otherValue = getValue(data, targetField)
+  validate: (data, field, [targetField, expectedValues]: ComparisonArg) => {
+    const targetFieldValue = getValue(data, targetField)
 
+    if (empty(targetFieldValue)) {
+      return true
+    }
+
+    /**
+     * Ignore when expectedValues are array and none of the values matches
+     * the value of the targeted field.
+     */
     /* eslint eqeqeq: "off" */
-    if (empty(otherValue) || expectedValue != otherValue) {
+    if (Array.isArray(expectedValues)) {
+      if (!expectedValues.find((value) => targetFieldValue == value)) {
+        return true
+      }
+    } else if (targetFieldValue != expectedValues) {
       return true
     }
 
