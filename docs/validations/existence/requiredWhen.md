@@ -17,8 +17,21 @@ const rules = {
  
 // or
 const rules = {
-  state: [
+  address: [
     validations.requiredWhen(['checkout_type', 'deliver'])
+  ]
+}
+```
+ 
+You can also define an array of values to match from. For example: Ask for
+the `county` when `country=Uk or US`.
+ 
+```ts
+import { validations } from 'indicative/validator'
+ 
+const rules = {
+  state: [
+    validations.requiredWhen(['country', ['UK', 'US']])
   ]
 }
 ```

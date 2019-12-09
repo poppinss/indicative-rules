@@ -1,6 +1,6 @@
 {
   "name": "indicative-rules",
-  "version": "7.2.3",
+  "version": "7.3.0",
   "main": "build/index.js",
   "files": [
     "build/src",
