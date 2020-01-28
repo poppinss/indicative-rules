@@ -38,17 +38,11 @@ test.group('raw | url', () => {
   })
 
   test('return true when input contains 63 characters TLD', (assert) => {
-    assert.equal(
-      Is.url('https://example.abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijk'),
-      true,
-    )
+    assert.isTrue(Is.url('https://example.abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijk'))
   })
 
   test('return false when input contains more than 63 characters TLD', (assert) => {
-    assert.equal(
-      Is.url('https://example.abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijkl'),
-      false,
-    )
+    assert.isFalse(Is.url('https://example.abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijkl'))
   })
 
   test('return true when input contains only localhost', (assert) => {
@@ -61,5 +55,13 @@ test.group('raw | url', () => {
 
   test('return true when domain name part contains 1 character', (assert) => {
     assert.isTrue(Is.url('https://t.co'))
+  })
+
+  test('return true when is an IP', (assert) => {
+    assert.isTrue(Is.url('http://192.168.99.100'))
+  })
+
+  test('return true when is an IP with port', (assert) => {
+    assert.isTrue(Is.url('http://192.168.99.100:8083'))
   })
 })
