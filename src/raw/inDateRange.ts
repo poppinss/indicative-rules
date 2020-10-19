@@ -25,4 +25,4 @@
  */
 import * as inDateRange from 'date-fns/is_within_range';
 
-export inDateRange;
+export const inDateRange;
