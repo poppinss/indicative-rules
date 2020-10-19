@@ -23,4 +23,6 @@
  * }
  * ```
  */
-export { isWithinRange as inDateRange } from 'date-fns'
+import * as inDateRange from 'date-fns/is_within_range';
+
+export inDateRange;
